@@ -93,7 +93,15 @@
     </style>
 </head>
 <body>
+    <?php
+    session_start();
+    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+        header("Location: login.php");  
+        exit();
+    } 
 
+    ?>
+   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">EventHub</a>
@@ -121,56 +129,55 @@
         </div>
     </nav>
 
-<div class="container py-5">
+    <div class="container py-5">
+        <div class="search-container mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <select class="form-select" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="music">Music</option>
+                        <option value="tech">Technology</option>
+                        <option value="sport">Sports</option>
+                        <option value="art">Arts & Culture</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <select class="form-select" id="dateFilter">
+                        <option value="">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
-    <div class="search-container mb-4">
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
-            </div>
-            <div class="col-md-3 mb-3">
-                <select class="form-select" id="categoryFilter">
-                    <option value="">All Categories</option>
-                    <option value="music">Music</option>
-                    <option value="tech">Technology</option>
-                    <option value="sport">Sports</option>
-                    <option value="art">Arts & Culture</option>
-                </select>
-            </div>
-            <div class="col-md-3 mb-3">
-                <select class="form-select" id="dateFilter">
-                    <option value="">All Dates</option>
-                    <option value="today">Today</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
-                </select>
-            </div>
+
+        <div class="row g-4" id="eventsContainer">
+        
         </div>
     </div>
 
-
-    <div class="row g-4" id="eventsContainer">
-     
-    </div>
-</div>
-
-<div class="modal fade" id="eventModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-         
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+    <div class="modal fade" id="eventModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
