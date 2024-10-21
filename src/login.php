@@ -81,7 +81,7 @@
     <div class="login-container">
         <div class="login-form" id="loginForm">
             <h1>Log In</h1>
-            <form id="signinForm"  onsubmit="handleSignIn(event)" action="index.php" method="POST">
+            <form id="signinForm"  onsubmit="handleSignIn(event)" action="../index.php" method="POST">
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" name="email"required>
                 </div>
@@ -102,20 +102,20 @@
         const showSignupBtn = document.getElementById('showSignup');
         const showLoginBtn = document.getElementById('showLogin');
 
-        function handleSignIn(event) {
-            event.preventDefault();
-            Swal.fire({
-                title: 'Success!',
-                text: 'You have successfully signed in!',
-                icon: 'success',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#02a152',
-                timer: 20000,
-                timerProgressBar: true
-            }).then(() => {
-                window.location.href = 'index.php';
-            });
-        }
+        // function handleSignIn(event) {
+        //     event.preventDefault();
+        //     Swal.fire({
+        //         title: 'Success!',
+        //         text: 'You have successfully signed in!',
+        //         icon: 'success',
+        //         confirmButtonText: 'OK',
+        //         confirmButtonColor: '#02a152',
+        //         timer: 20000,
+        //         timerProgressBar: true
+        //     }).then(() => {
+        //         window.location.href = 'index.php';
+        //     });
+        // }
 
         function handleSignUp(event) {
             event.preventDefault();

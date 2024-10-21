@@ -95,11 +95,13 @@
 <body>
     <?php
     require __DIR__ . '/vendor/autoload.php';
-    session_start();
-    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-        header("Location: src/login.php");  
-        exit();
-    } 
+    // session_start();
+    // if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+    //     header("Location: src/login.php");  
+    //     exit();
+    // } 
+
+    
 
     ?>
    
@@ -115,11 +117,11 @@
                         <a class="nav-link active" href="#">Browse Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="event-registration.php">My Registrations</a>
+                        <a class="nav-link" href="src/event-registration.php">My Registrations</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="user-profile.php">My Profile</a>
+                        <a class="nav-link" href="src/user-profile.php">My Profile</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -280,7 +282,6 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'login.php'; // Redirect to login page
     });
 }
 

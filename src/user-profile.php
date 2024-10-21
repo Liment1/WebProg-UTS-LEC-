@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Browse Events</a>
+                        <a class="nav-link active" href="../index.php">Browse Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="event-registration.php">My Registrations</a>
