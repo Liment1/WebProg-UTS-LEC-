@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Login Page</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -112,10 +112,8 @@
                 confirmButtonColor: '#02a152',
                 timer: 20000,
                 timerProgressBar: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('signinForm').submit();
-                }
+            }).then(() => {
+                window.location.href = 'index.php';
             });
         }
 

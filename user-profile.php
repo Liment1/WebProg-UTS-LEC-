@@ -62,19 +62,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Browse Events</a>
+                        <a class="nav-link active" href="index.php">Browse Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="event-registration.html">My Registrations</a>
+                        <a class="nav-link" href="event-registration.php">My Registrations</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="user-profile.html">My Profile</a>
+                        <a class="nav-link" href="user-profile.php">My Profile</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
                     Welcome, <span id="userName">User</span>
-                    <button class="btn btn-outline-light ms-3" onclick="logout('index.html')">Logout</button>
+                    <button class="btn btn-outline-light ms-3" onclick="logout('login.php')">Logout</button>
                 </span>
             </div>
         </div>
@@ -139,7 +139,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'index.html'; 
+        window.location.href = 'login.php'; 
     });
 }
 

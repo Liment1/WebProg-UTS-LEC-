@@ -63,14 +63,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="event-browsing.html">Browse Events</a>
+                    <a class="nav-link" href="index.php">Browse Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#">My Registrations</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="user-profile.html">My Profile</a>
+                    <a class="nav-link" href="user-profile.php">My Profile</a>
                 </li>
             </ul>
             <span class="navbar-text">
