@@ -1,0 +1,16 @@
+{
+    "name": "user/lec",
+    "autoload": {
+        "psr-4": {
+            "User\\Lec\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Liment",
+            "email": "69704267+Liment1@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
