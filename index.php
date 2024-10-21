@@ -94,10 +94,10 @@
 </head>
 <body>
     <?php
-    require src\connection.php;
+    require __DIR__ . '/vendor/autoload.php';
     session_start();
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-        header("Location: login.php");  
+        header("Location: src/login.php");  
         exit();
     } 
 
