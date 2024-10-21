@@ -90,38 +90,59 @@
             left: 0;
             top: 4px;
         }
+
+        .borderless {
+        border: none;
+        border-bottom: 1px solid #ccc; 
+        padding: 5px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .borderless:focus {
+        outline: none;
+        border-bottom: 1px solid #000; 
+    }
+
+    #previewImage {
+        cursor: pointer;
+        width: 100%;
+        max-width: 100%; 
+        object-fit: cover;
+    }
+
+    #previewImage:hover {
+        opacity: 0.8;
+    }
     </style>
 </head>
 <body>
     <?php
-    require __DIR__ . '/vendor/autoload.php';
+    // require __DIR__ . '../../vendor/autoload.php';
     // session_start();
     // if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
     //     header("Location: src/login.php");  
     //     exit();
     // } 
-
-    
-
+    require_once __DIR__ .  '../../connection.php';
+    $sql = "SELECT * FROM Events";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
     ?>
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">EventHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="event-manage.php">Admin Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Browse Events</a>
+                        <a class="nav-link active" href="event-manage.php">Event Management </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="src/event-registration.php">My Registrations</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="sruser-profile.php">My Profile</a>
+                        <a class="nav-link" href="User-manage.php">User Management</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -156,13 +177,48 @@
                     </select>
                 </div>
             </div>
-        </div>
-
-
+        </div>  
         <div class="row g-4" id="eventsContainer">
-        
+            <?php
+            $idx = 1;
+            while($Events = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $featured = false; 
+                $ymd = explode('-',$Events['event_date']); 
+                $month = $ymd[1];
+                $date = $ymd[2]; 
+                $CompleteTime = explode(':',$Events['event_time']); 
+                $eventTime = $CompleteTime[0].':'.$CompleteTime[1];
+                
+                ?>
+                <div class="col-md-4" onclick="showEventDetails(<?= $idx ?>)">
+                <div class="card event-card">
+                    <?php echo ($featured == true ? '<div class="featured-badge"><span class="badge bg-warning">Featured</span></div>' : ' ') ?>
+                    <div class="date-badge">
+                        <div class="month"><?= htmlspecialchars($month) ?></div>
+                        <div class="day"><?= htmlspecialchars($date) ?></div>
+                    </div>
+                    <img src=<?= 'banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
+                    <span class="category-badge badge bg-primary"><?= htmlspecialchars( $Events['event_category']) ?></span>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= htmlspecialchars( $Events['event_name']) ?></h5>
+                        <p class="card-text text-muted">
+                            <i class="fas fa-map-marker-alt me-2"></i><?= htmlspecialchars($Events['description']) ?><br>
+                            <i class="fas fa-clock me-2"></i><?= htmlspecialchars($eventTime) ?>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-primary fw-bold"><?= htmlspecialchars($Events['curr_participants']).'\\'. htmlspecialchars($Events['max_participants']) ?></span>
+                            <button class="btn btn-outline-primary btn-sm">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $idx += 1;
+            }
+            ?>
         </div>
     </div>
+</div>
 
     <div class="modal fade" id="eventModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -240,39 +296,6 @@ function formatDate(dateString) {
     return { month, day };
 }
 
-function createEventCards() {
-    const container = document.getElementById('eventsContainer');
-    container.innerHTML = '';
-
-    events.forEach(event => {
-        const formattedDate = formatDate(event.date);
-        const card = `
-            <div class="col-md-4" onclick="showEventDetails(${event.id})">
-                <div class="card event-card">
-                    ${event.featured ? '<div class="featured-badge"><span class="badge bg-warning">Featured</span></div>' : ''}
-                    <div class="date-badge">
-                        <div class="month">${formattedDate.month}</div>
-                        <div class="day">${formattedDate.day}</div>
-                    </div>
-                    <img src="${event.image}" class="card-img-top" alt="${event.title}">
-                    <span class="category-badge badge bg-primary">${event.category}</span>
-                    <div class="card-body">
-                        <h5 class="card-title">${event.title}</h5>
-                        <p class="card-text text-muted">
-                            <i class="fas fa-map-marker-alt me-2"></i>${event.location}<br>
-                            <i class="fas fa-clock me-2"></i>${event.time}
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">${event.price}</span>
-                            <button class="btn btn-outline-primary btn-sm">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.innerHTML += card;
-    });
-}
 function logout() {
     Swal.fire({
         title: 'Logging out...',
@@ -295,39 +318,66 @@ function showEventDetails(eventId) {
 
     modalTitle.textContent = event.title;
     modalBody.innerHTML = `
-        <img src="${event.image}" class="mb-4" alt="${event.title}">
-        <div class="row">
-            <div class="col-md-8">
-                <h5>About This Event</h5>
-                <p>${event.description}</p>
-                
-                <h5 class="mt-4">Schedule</h5>
-                <ul class="event-details-list">
-                    ${event.schedule.map(item => `<li><i class="fas fa-clock"></i>${item}</li>`).join('')}
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="card-title">Event Details</h6>
-                        <ul class="event-details-list">
-                            <li><i class="fas fa-calendar"></i>${event.date}</li>
-                            <li><i class="fas fa-clock"></i>${event.time}</li>
-                            <li><i class="fas fa-map-marker-alt"></i>${event.location}</li>
-                            <li><i class="fas fa-ticket-alt"></i>${event.price}</li>
-                            <li><i class="fas fa-user"></i>${event.organizer}</li>
-                        </ul>
-                        
-                        <h6 class="mt-4">Amenities</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            ${event.amenities.map(amenity => 
-                                `<span class="badge bg-light text-dark">${amenity}</span>`
-                            ).join('')}
-                        </div>
+<form action="process_update.php" method="POST" enctype="multipart/form-data">
+    <!-- Clickable Image for Upload -->
+    <label for="imageUpload" class="d-block">
+        <img src="${event.image}" class="mb-4" alt="${event.title}" id="previewImage" style="cursor: pointer; max-width: 100%;">
+    </label>
+    <input type="file" name="image" id="imageUpload" style="display: none;" accept="image/*">
+
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Editable Section for About and Description -->
+            <h5>About This Event</h5>
+            <textarea name="description" rows="3" class="form-control borderless">${event.description}</textarea>
+            
+            <h5 class="mt-4">Schedule</h5>
+            <ul class="event-details-list">
+                ${event.schedule.map((item, index) => `
+                    <li>
+                        <input type="text" name="schedule[]" value="${item}" class="form-control borderless" />
+                    </li>`).join('')}
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Editable Event Details Section -->
+                    <h6 class="card-title">Event Details</h6>
+                    <ul class="event-details-list">
+                        <li><i class="fas fa-calendar"></i> 
+                            <input type="date" name="date" value="${event.date}" class="form-control borderless" />
+                        </li>
+                        <li><i class="fas fa-clock"></i> 
+                            <input type="time" name="time" value="${event.time}" class="form-control borderless" />
+                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i>
+                            <input type="text" name="location" value="${event.location}" class="form-control borderless" />
+                        </li>
+                        <li><i class="fas fa-ticket-alt"></i>
+                            <input type="text" name="price" value="${event.price}" class="form-control borderless" />
+                        </li>
+                        <li><i class="fas fa-user"></i>
+                            <input type="text" name="organizer" value="${event.organizer}" class="form-control borderless" />
+                        </li>
+                    </ul>
+                    
+                    <!-- Editable Amenities Section -->
+                    <h6 class="mt-4">Amenities</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        ${event.amenities.map((amenity, index) => `
+                            <input type="text" name="amenities[]" value="${amenity}" class="form-control borderless mb-2" />
+                        `).join('')}
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-4">Update Event</button>
+</form>
+
     `;
 
     registerButton.setAttribute('data-event-id', event.id);
