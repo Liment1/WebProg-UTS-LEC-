@@ -15,12 +15,10 @@ try {
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
 
-    // Set headers for the Excel sheet
     $sheet->setCellValue('A1', 'No');
     $sheet->setCellValue('B1', 'Participants ID');
     $sheet->setCellValue('C1', 'Participants Name');
 
-    // Prepare event ID and query
     $id = 'E' . str_pad($_POST['event_ID'], 4, "0", STR_PAD_LEFT);
     $stmt = $connection->prepare("SELECT e.Event_name, u.User_Id AS User_id, u.Name AS User_Name 
                                   FROM events AS e 
@@ -33,22 +31,19 @@ try {
     $idx = 1;
     $eventName = '';
 
-    // Fetch rows and populate the sheet
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $sheet->setCellValue('A' . $rowNumber, $idx);
         $sheet->setCellValue('B' . $rowNumber, $row['User_id']);
         $sheet->setCellValue('C' . $rowNumber, $row['User_Name']);
         $rowNumber++;
         $idx++;
-        $eventName = $row['Event_name'];  // Fix the event name access
+        $eventName = $row['Event_name'];  
     }
 
-    // Set correct headers for Excel file download
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Disposition: attachment; filename="event_' . $eventName . '.xlsx"');
     header('Cache-Control: max-age=0');
 
-    // Save the spreadsheet to output
     $writer = new Xlsx($spreadsheet);
     $writer->save('php://output');
     
