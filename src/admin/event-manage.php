@@ -114,6 +114,14 @@
     #previewImage:hover {
         opacity: 0.8;
     }
+
+    .same-size-btn {
+        height: calc(2.25rem + 2px); 
+    }
+
+    
+</style>
+
     </style>
 </head>
 <body>
@@ -128,6 +136,7 @@
     $sql = "SELECT * FROM Events";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
+    $idx = 1;
     ?>
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -153,10 +162,10 @@
         </div>
     </nav>
 
-    <div class="container py-5">
+    <div class="container pe-5">
         <div class="search-container mb-4">
             <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-5 mb-3">
                     <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
                 </div>
                 <div class="col-md-3 mb-3">
@@ -176,12 +185,28 @@
                         <option value="month">This Month</option>
                     </select>
                 </div>
+                <div class="col-md-1 d-flex pb-3 align-items-center">
+                    <button class="btn btn-primary btn-md" onclick="addEvents()">Add</button>
+                </div>
             </div>
         </div>  
         <div class="row g-4" id="eventsContainer">
             <?php
-            $idx = 1;
+            $EventsData = []; 
             while($Events = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $EventsData[$idx] = [
+                    'event_date' => $Events['event_date'],
+                    'banner_url' => $Events['banner_url'],
+                    'banner_name' => $Events['banner_name'],
+                    'event_status' => $Events['event_status'],
+                    'event_name' => $Events['event_name'],
+                    'location' => $Events['location'],
+                    'description' => $Events['description'],
+                    'event_time' => $Events['event_time'],
+                    'status' => $Events['event_status'],
+                    'curr_participants' => $Events['curr_participants'],
+                    'max_participants' => $Events['max_participants']
+                ];
                 $featured = false; 
                 $ymd = explode('-',$Events['event_date']); 
                 $month = $ymd[1];
@@ -189,25 +214,40 @@
                 $CompleteTime = explode(':',$Events['event_time']); 
                 $eventTime = $CompleteTime[0].':'.$CompleteTime[1];
                 
+                $badgeClass = 'bg-primary'; 
+                if ($Events['event_status'] === 'open') {
+                    $badgeClass = 'bg-success'; 
+                } elseif ($Events['event_status'] === 'cancelled') {
+                    $badgeClass = 'bg-warning'; 
+                } elseif ($Events['event_status'] === 'closed') {
+                    $badgeClass = 'bg-danger'; 
+                }
                 ?>
-                <div class="col-md-4" onclick="showEventDetails(<?= $idx ?>)">
+                <!-- display -->
+                <div class="col-md-4">
                 <div class="card event-card">
-                    <?php echo ($featured == true ? '<div class="featured-badge"><span class="badge bg-warning">Featured</span></div>' : ' ') ?>
                     <div class="date-badge">
                         <div class="month"><?= htmlspecialchars($month) ?></div>
                         <div class="day"><?= htmlspecialchars($date) ?></div>
                     </div>
                     <img src=<?= 'banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
-                    <span class="category-badge badge bg-primary"><?= htmlspecialchars( $Events['event_category']) ?></span>
+                    <span class="category-badge badge <?= $badgeClass ?>"><?= htmlspecialchars( $Events['event_status']) ?></span>
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars( $Events['event_name']) ?></h5>
                         <p class="card-text text-muted">
-                            <i class="fas fa-map-marker-alt me-2"></i><?= htmlspecialchars($Events['description']) ?><br>
+                            <i class="fas fa-map-marker-alt me-2"></i><?= htmlspecialchars($Events['location']) ?><br>
                             <i class="fas fa-clock me-2"></i><?= htmlspecialchars($eventTime) ?>
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold"><?= htmlspecialchars($Events['curr_participants']).'\\'. htmlspecialchars($Events['max_participants']) ?></span>
-                            <button class="btn btn-outline-primary btn-sm">Edit</button>
+                            <span class="text-primary fw-bold"><?= htmlspecialchars($Events['curr_participants']).'/'. htmlspecialchars($Events['max_participants']) ?></span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $idx ?>)">Delete</button>
+                            <button class="btn btn-warning btn-sm" onclick="updateEvent(<?= $idx ?>)">Edit</button>
+                            <form action="event-export.php" method="POST">
+                                <input type="text" name="event_ID" value=<?= $idx ?> hidden> 
+                                <input type="submit" class="btn btn-success btn-sm" value="Export">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -230,10 +270,6 @@
                 <div class="modal-body">
             
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="registerButton">Register</button>
-                </div>
             </div>
         </div>
     </div>
@@ -241,53 +277,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
 
-const events = [
-    {
-        id: 1,
-        title: "Summer Music Festival 2024",
-        image: "https://via.placeholder.com/400x300",
-        category: "music",
-        date: "2024-07-15",
-        time: "16:00",
-        location: "Central Park, New York",
-        price: "$50",
-        description: "Join us for the biggest music festival of the summer featuring top artists from around the world!",
-        featured: true,
-        schedule: [
-            "4:00 PM - Opening Act",
-            "5:30 PM - Local Bands Showcase",
-            "7:00 PM - Main Performance",
-            "9:00 PM - Headline Act",
-            "11:00 PM - Closing Ceremony"
-        ],
-        amenities: ["Food Courts", "Parking", "VIP Areas", "First Aid"],
-        organizer: "EventPro Productions"
-    },
-    {
-        id: 2,
-        title: "Tech Innovation Summit",
-        image: "https://via.placeholder.com/400x300",
-        category: "tech",
-        date: "2024-08-20",
-        time: "09:00",
-        location: "Convention Center, San Francisco",
-        price: "$299",
-        description: "Discover the latest technological innovations and network with industry leaders.",
-        featured: false,
-        schedule: [
-            "9:00 AM - Registration",
-            "10:00 AM - Keynote Speech",
-            "11:30 AM - Panel Discussion",
-            "1:00 PM - Networking Lunch",
-            "2:30 PM - Workshops"
-        ],
-        amenities: ["Wi-Fi", "Lunch Included", "Conference Materials"],
-        organizer: "TechCon Events"
-    },
-   
-];
+<script>
+const EventsData = <?php echo json_encode($EventsData); ?>;
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -309,102 +302,237 @@ function logout() {
     });
 }
 
-function showEventDetails(eventId) {
-    const event = events.find(e => e.id === eventId);
-    const modal = new bootstrap.Modal(document.getElementById('eventModal'));
-    const modalTitle = document.querySelector('#eventModal .modal-title');
-    const modalBody = document.querySelector('#eventModal .modal-body');
-    const registerButton = document.getElementById('registerButton');
-
-    modalTitle.textContent = event.title;
-    modalBody.innerHTML = `
-<form action="process_update.php" method="POST" enctype="multipart/form-data">
-    <!-- Clickable Image for Upload -->
-    <label for="imageUpload" class="d-block">
-        <img src="${event.image}" class="mb-4" alt="${event.title}" id="previewImage" style="cursor: pointer; max-width: 100%;">
-    </label>
-    <input type="file" name="image" id="imageUpload" style="display: none;" accept="image/*">
-
-    <div class="row">
-        <div class="col-md-8">
-            <!-- Editable Section for About and Description -->
-            <h5>About This Event</h5>
-            <textarea name="description" rows="3" class="form-control borderless">${event.description}</textarea>
-            
-            <h5 class="mt-4">Schedule</h5>
-            <ul class="event-details-list">
-                ${event.schedule.map((item, index) => `
-                    <li>
-                        <input type="text" name="schedule[]" value="${item}" class="form-control borderless" />
-                    </li>`).join('')}
-            </ul>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <!-- Editable Event Details Section -->
-                    <h6 class="card-title">Event Details</h6>
-                    <ul class="event-details-list">
-                        <li><i class="fas fa-calendar"></i> 
-                            <input type="date" name="date" value="${event.date}" class="form-control borderless" />
-                        </li>
-                        <li><i class="fas fa-clock"></i> 
-                            <input type="time" name="time" value="${event.time}" class="form-control borderless" />
-                        </li>
-                        <li><i class="fas fa-map-marker-alt"></i>
-                            <input type="text" name="location" value="${event.location}" class="form-control borderless" />
-                        </li>
-                        <li><i class="fas fa-ticket-alt"></i>
-                            <input type="text" name="price" value="${event.price}" class="form-control borderless" />
-                        </li>
-                        <li><i class="fas fa-user"></i>
-                            <input type="text" name="organizer" value="${event.organizer}" class="form-control borderless" />
-                        </li>
-                    </ul>
-                    
-                    <!-- Editable Amenities Section -->
-                    <h6 class="mt-4">Amenities</h6>
-                    <div class="d-flex flex-wrap gap-2">
-                        ${event.amenities.map((amenity, index) => `
-                            <input type="text" name="amenities[]" value="${amenity}" class="form-control borderless mb-2" />
-                        `).join('')}
+function confirmDelete(itemId) {
+    const modalHtml = `
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this event?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form action="event-delete.php" method="POST">
+                            <input type="hidden" name="event_id" id="deleteIdField" value="${itemId}">
+                            <input type="submit" class="btn btn-danger" id="confirmDelete" value="Delete">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <button type="submit" class="btn btn-primary mt-4">Update Event</button>
-</form>
 
     `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
 
-    registerButton.setAttribute('data-event-id', event.id);
+    const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+    deleteModal.show();
+
+    document.getElementById('deleteModal').addEventListener('hidden.bs.modal', function() {
+        this.remove();
+    });
+}
+
+function updateEvent(eventId) {
+    const event = EventsData[eventId];
+    const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+    const modalBody = document.querySelector('#eventModal .modal-body');
+    const modalHeader = document.querySelector('#eventModal .modal-header');
+
+    modalHeader.innerHTML = `
+        <h5 class="modal-title fs-2 fw-bold">Edit Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    `;
+
+    const sanitizedEventName = DOMPurify.sanitize(event.event_name);
+    const sanitizedBannerUrl = DOMPurify.sanitize("banner/".concat(event.banner_url));
+    const sanitizedBannerName = DOMPurify.sanitize(event.banner_name);
+    const sanitizedDescription = DOMPurify.sanitize(event.description);
+    const sanitizedMaxParticipants = DOMPurify.sanitize(event.max_participants);
+    const sanitizedEventDate = DOMPurify.sanitize(event.event_date);
+    const sanitizedEventTime = DOMPurify.sanitize(event.event_time);
+    const sanitizedLocation = DOMPurify.sanitize(event.location);
+    const sanitizedstatus = DOMPurify.sanitize(event.status);
+
+    modalBody.innerHTML = `
+    <form action="event-update.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="event_id" value="${eventId}">
+        <input type="hidden" name="default_banner_url" value="${event.banner_url}"> <!-- Hidden field for default image -->
+        <input type="hidden" name="default_banner_name" value="${event.banner_name}"> <!-- Hidden field for default image -->
+
+        <div class="modal-header pt-0">
+            <input type="text" name="event_name" value="${sanitizedEventName}" class="form-control borderless fw-bold" />
+        </div>
+
+        <label for="imageUpload" class="d-block">
+            <img src="${sanitizedBannerUrl}" class="mb-4" alt="${sanitizedBannerName}" id="previewImage" style="cursor: pointer; max-width: 100%;">
+        </label>
+        <input type="file" name="banner" id="imageUpload" style="display: none;" accept="image/*">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5>About This Event</h5>
+                <textarea name="description" rows="3" class="form-control borderless">${sanitizedDescription}</textarea>
+
+                <h6 class="mt-4">Capacity</h6>
+                <div class="input-group w-25">
+                    <span class="input-group-text">${event.curr_participants}/</span>
+                    <input type="number" name="max_capacity" value="${sanitizedMaxParticipants}" class="form-control borderless" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Event Details</h6>
+                        <ul class="event-details-list">
+                            <li><i class="fas fa-calendar"></i> 
+                                <input type="date" name="date" value="${sanitizedEventDate}" class="form-control borderless" />
+                            </li>
+                            <li><i class="fas fa-clock"></i> 
+                                <input type="time" name="time" value="${sanitizedEventTime}" class="form-control borderless" />
+                            </li>
+                            <li><i class="fas fa-map-marker-alt"></i>
+                                <input type="text" name="location" value="${sanitizedLocation}" class="form-control borderless" />
+                            </li>
+                            <li><i class="fas fa-chart-simple"></i>
+                                <select name="status" class="form-control borderless">
+                                    <option value="open" ${sanitizedstatus === 'open' ? 'selected' : ''}>Open</option>
+                                    <option value="closed" ${sanitizedstatus === 'closed' ? 'selected' : ''}>Closed</option>
+                                    <option value="cancelled" ${sanitizedstatus === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4 float-end">Update Event</button>
+    </form>
+    `;
 
     modal.show();
+
+    const imageInput = document.getElementById('imageUpload');
+    const previewImage = document.getElementById('previewImage');
+
+    imageInput.addEventListener('change', function(event) {
+        const file = event.target.files[0]; 
+        if (file) {
+            const reader = new FileReader(); 
+
+            reader.onload = function(e) {
+                previewImage.src = e.target.result; 
+            }
+
+            reader.readAsDataURL(file); 
+        }
+    });
+}
+
+function addEvents() {
+    const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+    const modalBody = document.querySelector('#eventModal .modal-body');
+    const modalHeader = document.querySelector('#eventModal .modal-header');
+
+    // Set modal title
+    modalHeader.innerHTML = `
+        <h5 class="modal-title fs-2 fw-bold">Add Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    `;
+
+    // Clear form values and set the form action to event-add.php
+    modalBody.innerHTML = `
+    <form id="addEventForm" action="event-add.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="event_id" value=""> <!-- Clear event_id -->
+
+        <div class="modal-header pt-0">
+            <input type="text" name="event_name" value="" class="form-control borderless fw-bold" placeholder="Enter event name" />
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="banner">Insert Image</label>
+            <input type="file" class="form-control" name="banner" id="imageUpload" accept="image/*">
+        </div>
+
+        <!-- Image preview -->
+        <div class="mb-3">
+            <img id="previewImage" src="" alt="Image Preview" style="display:none; max-width: 100%; height: auto;" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5>About This Event</h5>
+                <textarea name="description" rows="3" class="form-control borderless" placeholder="Enter description"></textarea>
+
+                <h6 class="mt-4">Capacity</h6>
+                <div class="input-group w-50">
+                    <input type="number" name="max_capacity" value="" class="form-control borderless" placeholder="Enter max capacity" />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Event Details</h6>
+                        <ul class="event-details-list">
+                            <li><i class="fas fa-calendar"></i> 
+                                <input type="date" name="date" value="" class="form-control borderless" />
+                            </li>
+                            <li><i class="fas fa-clock"></i> 
+                                <input type="time" name="time" value="" class="form-control borderless" />
+                            </li>
+                            <li><i class="fas fa-map-marker-alt"></i>
+                                <input type="text" name="location" value="" class="form-control borderless" placeholder="Enter location" />
+                            </li>
+                            <li><i class="fas fa-chart-simple"></i>
+                                <select name="status" class="form-control borderless">
+                                    <option value="open">Open</option>
+                                    <option value="closed">Closed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4 float-end">Add</button> <!-- Changed to Add -->
+    </form>
+    `;
+
+    // Show the modal
+    modal.show();
+
+    // Get the image input and preview elements
+    const imageInput = document.getElementById('imageUpload');
+    const previewImage = document.getElementById('previewImage');
+
+    // Add change event listener for image input
+    imageInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader(); 
+
+            // When the file is read, display the image preview
+            reader.onload = function(e) {
+                previewImage.src = e.target.result; 
+                previewImage.style.display = 'block'; // Show the image
+            }
+
+            reader.readAsDataURL(file); // Read the file as a Data URL (base64)
+        } else {
+            previewImage.style.display = 'none'; // Hide the preview if no file is selected
+        }
+    });
 }
 
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    createEventCards();
-
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredEvents = events.filter(event => 
-            event.title.toLowerCase().includes(searchTerm) ||
-            event.description.toLowerCase().includes(searchTerm)
-        );
-        
-      
-    });
-
-    document.getElementById('registerButton').addEventListener('click', (e) => {
-        const eventId = e.target.getAttribute('data-event-id');
-        window.location.href = `event-registration.php?eventId=${eventId}`;
-    });
-});
 </script>
 
 </body>

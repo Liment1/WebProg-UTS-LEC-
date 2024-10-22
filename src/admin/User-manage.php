@@ -1,31 +1,16 @@
 <?php
-$host = "localhost"; 
-$user = "root";      
-$password = "";      
-$database = "test";  
-
-$conn = new mysqli($host, $user, $password, $database);
-
-// cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
-echo "Koneksi berhasil!<br>";
+require_once __DIR__ . '../../connection.php';
 
 $sql = "SELECT user_id, name, email, role, created_at FROM users WHERE role = 'user' ORDER BY role = 'admin' DESC, created_at ASC";
-$result = $conn->query($sql);
+$result = $connection->query($sql);
 
-$users = array();
-
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+if (!empty($result)) {
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $users[] = $row;
     }
 } else {
     echo "Tidak ada data.";
 }
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -34,43 +19,79 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>User Management</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="event-manage.php">Admin Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="event-manage.php">Event Management </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="User-manage.php">User Management</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Welcome, <span id="userName">User</span>
+                    <button class="btn btn-outline-light ms-3" onclick="logout('login.php')">Logout</button>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="mb-4">User Management</h1>
 
-    <table border="1">
-        <tr>
-            <th>ID</th> 
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Created At</th>
-            <th>Actions</th>
-        </tr>
-        <?php if (!empty($users)): ?>
-            <?php 
-                $display_id = 1; 
-                foreach ($users as $user): 
-            ?>
-            <tr>
-                <td><?php echo $display_id++; ?></td> 
-                <td><?php echo htmlspecialchars($user['name']); ?></td>
-                <td><?php echo htmlspecialchars($user['email']); ?></td>
-                <td><?php echo htmlspecialchars($user['role']); ?></td>
-                <td><?php echo htmlspecialchars($user['created_at']); ?></td>
-                <td>
-                    <?php if ($user['role'] !== 'admin'): ?>
-                        <a href="user_management.php?delete_user_id=<?php echo $user['user_id']; ?>" 
-                           onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
-                    <?php endif; ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="6">No users found.</td>
-            </tr>
-        <?php endif; ?>
-    </table>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th> 
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($users)): ?>
+                    <?php 
+                        $display_id = 1; 
+                        foreach ($users as $user): 
+                    ?>
+                    <tr>
+                        <td><?php echo $display_id++; ?></td> 
+                        <td><?php echo htmlspecialchars($user['name']); ?></td>
+                        <td><?php echo htmlspecialchars($user['email']); ?></td>
+                        <td><?php echo htmlspecialchars($user['role']); ?></td>
+                        <td><?php echo htmlspecialchars($user['created_at']); ?></td>
+                        <td>
+                            <a href="show_user.php?user_id=<?php echo $user['user_id']; ?>" 
+                               class="btn btn-sm btn-primary">Show</a>
+                            <a href="user_management.php?delete_user_id=<?php echo $user['user_id']; ?>" 
+                               class="btn btn-sm btn-danger"
+                               onclick="return confirm('Are you sure you want to delete this user?');">
+                               Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="6" class="text-center">No users found.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+

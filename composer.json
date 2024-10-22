@@ -12,5 +12,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "phpoffice/phpspreadsheet": "dev-master"
+    }
 }

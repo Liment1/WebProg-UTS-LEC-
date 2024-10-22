@@ -77,11 +77,11 @@
 </head>
 
 <body>
-
+    
     <div class="login-container">
         <div class="login-form" id="loginForm">
             <h1>Log In</h1>
-            <form id="signinForm"  onsubmit="handleSignIn(event)" action="../index.php" method="POST">
+            <form id="signinForm"  onsubmit="handleSignIn(event)" action="../.php" method="POST">
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" name="email"required>
                 </div>
@@ -126,9 +126,9 @@
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#02a152'
             }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('signinForm').submit();
-                }
+                // if (result.isConfirmed) {
+                //     document.getElementById('signinForm').submit();
+                // }
             });
         }
     </script>
