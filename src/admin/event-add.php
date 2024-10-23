@@ -1,5 +1,12 @@
 <?php
 require_once __DIR__ . '../../connection.php';
+
+session_start();
+if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+    header("Location: src/login.php");  
+    exit();
+} 
+
 if(!isset($_POST['event_id'])){
     header("location:event-manage.php");
 }

@@ -126,12 +126,11 @@
 </head>
 <body>
     <?php
-    // require __DIR__ . '../../vendor/autoload.php';
-    // session_start();
-    // if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-    //     header("Location: src/login.php");  
-    //     exit();
-    // } 
+    session_start();
+    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
+        header("Location: ../Verify/login.php");  
+        exit();
+    } 
     require_once __DIR__ .  '../../connection.php';
     $sql = "SELECT * FROM Events";
     $stmt = $connection->prepare($sql);
@@ -139,16 +138,16 @@
     $idx = 1;
     ?>
    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="event-manage.php">Admin Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="event-manage.php">Event Management </a>
+                        <a class="nav-link active" href="event-manage.php">Event Management</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="User-manage.php">User Management</a>
@@ -156,7 +155,7 @@
                 </ul>
                 <span class="navbar-text">
                     Welcome, <span id="userName">User</span>
-                    <button class="btn btn-outline-light ms-3" onclick="logout('login.php')">Logout</button>
+                    <button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button>
                 </span>
             </div>
         </div>
@@ -298,7 +297,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'src/login.php'; 
+        window.location.href = '../logout.php'; 
     });
 }
 

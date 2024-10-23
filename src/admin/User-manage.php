@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__ . '../../connection.php';
 
+session_start();
+if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
+    header("Location: ../Verify/login.php");  
+    exit();
+} 
+
 $sql = "SELECT user_id, name, email, role, created_at FROM users WHERE role = 'user' ORDER BY role = 'admin' DESC, created_at ASC";
 $result = $connection->query($sql);
 
@@ -25,25 +31,26 @@ if (!empty($result)) {
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="event-manage.php">Admin Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="event-manage.php">Event Management </a>
+                        <a class="nav-link active" href="event-manage.php">Event Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="User-manage.php">User Management</a>
+                        <a class="nav-link" href="User-manage.php">User Management</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
                     Welcome, <span id="userName">User</span>
-                    <button class="btn btn-outline-light ms-3" onclick="logout('login.php')">Logout</button>
+                    <button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button>
                 </span>
             </div>
         </div>
     </nav>
+
     <div class="container mt-5">
         <h1 class="mb-4">User Management</h1>
 
@@ -92,6 +99,21 @@ if (!empty($result)) {
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    function logout() {
+    Swal.fire({
+        title: 'Logging out...',
+        text: 'You will be redirected to the login page.',
+        icon: 'info',
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = '../logout.php'; 
+    });
+}
+</script>
+
 </body>
 </html>
 

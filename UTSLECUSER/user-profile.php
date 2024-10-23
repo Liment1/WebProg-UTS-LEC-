@@ -1,15 +1,21 @@
 <?php
 session_start();
 
-require_once "../connection.php";
+// Database connection
+require_once "database.php";
 
 $userData = null;
-$fetchUserSQL = "SELECT name, email FROM users WHERE user_id = ?"; 
-$stmt = $connection->prepare($fetchUserSQL);
-$stmt->execute([$_SESSION["user_id"]]);
-$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+$fetchUserSQL = "SELECT full_name, email FROM users WHERE id = ?"; // Ganti user_id dengan id
+$stmt = mysqli_stmt_init($conn);
+if (mysqli_stmt_prepare($stmt, $fetchUserSQL)) {
+    mysqli_stmt_bind_param($stmt, "i", $_SESSION["user_id"]); // Pastikan session user_id merujuk ke id yang benar
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $userData = mysqli_fetch_assoc($result);
+}
 
-$userName = $userData ? $userData['name'] : '';
+// Initialize variables from database data
+$userName = $userData ? $userData['full_name'] : '';
 $userEmail = $userData ? $userData['email'] : '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,56 +23,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updatedEmail = $_POST['inputEmail'];
     $newPassword = $_POST['inputPassword'];
 
-    $sql = "UPDATE users SET name = ?, email = ?";
+    // Prepare SQL to update user info
+    $sql = "UPDATE users SET full_name = ?, email = ?";
     if (!empty($newPassword)) {
         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
         $sql .= ", password = ?";
     }
-    $sql .= " WHERE user_id = ?";
+    $sql .= " WHERE id = ?";
 
-    $stmt = $connection->prepare($sql);
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        if (!empty($newPassword)) {
+            mysqli_stmt_bind_param($stmt, "sssi", $updatedName, $updatedEmail, $hashedPassword, $_SESSION["user_id"]);
+        } else {
+            mysqli_stmt_bind_param($stmt, "ssi", $updatedName, $updatedEmail, $_SESSION["user_id"]);
+        }
+        
+        if (mysqli_stmt_execute($stmt)) {
+            // Update session variables
+            $_SESSION["user_name"] = $updatedName;
+            $_SESSION["user_email"] = $updatedEmail;
+            
+            $userName = $updatedName;  // Update local variables
+            $userEmail = $updatedEmail;
 
-    if (!empty($newPassword)) {
-        $stmt->execute([$updatedName, $updatedEmail, $hashedPassword, $_SESSION["user_id"]]);
-    } else {
-        $stmt->execute([$updatedName, $updatedEmail, $_SESSION["user_id"]]);
-    }
-    
-    if ($stmt) {
-        $userName = $updatedName; 
-        $userEmail = $updatedEmail;
-
-        echo "<script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Profile Updated',
-                    text: 'Your profile information has been updated successfully!',
-                    confirmButtonColor: '#007bff'
-                });
-              </script>";
-    } else {
-        echo "<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Something went wrong while updating your profile.',
-                    confirmButtonColor: '#dc3545'
-                });
-              </script>";
+            echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Profile Updated',
+                        text: 'Your profile information has been updated successfully!',
+                        confirmButtonColor: '#007bff'
+                    });
+                  </script>";
+        } else {
+            echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Something went wrong while updating your profile.',
+                        confirmButtonColor: '#dc3545'
+                    });
+                  </script>";
+        }
     }
 }
 
 $eventHistory = [];
 $sql = "SELECT e.event_name, e.event_date 
         FROM registrations r 
-        JOIN events e ON r.event_id = e.event_id 
-        WHERE r.user_id = ?";
-$stmt = $connection->prepare($sql);
-$stmt->execute([$_SESSION["user_id"]]);
+        JOIN events e ON r.Event_id = e.event_id 
+        WHERE r.User_id = ?"; 
+$stmt = mysqli_stmt_init($conn);
+if (mysqli_stmt_prepare($stmt, $sql)) {
+    mysqli_stmt_bind_param($stmt, "i", $_SESSION["user_id"]);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-$eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $eventHistory[] = $row;
+    }
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -133,13 +150,13 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Browse Events</a>
+                        <a class="nav-link active" href="index.php">Browse Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="event-registration.php">My Registrations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="user-profile.php">My Profile</a>
+                        <a class="nav-link" href="user-profile.php">My Profile</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
