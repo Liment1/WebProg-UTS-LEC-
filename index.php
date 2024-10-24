@@ -1,7 +1,7 @@
 <?php
 session_start();
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-        header("Location: src/Verify/login.php");  
+        header("Location: login.php");
         exit();
     } 
 ?>
@@ -135,7 +135,7 @@ session_start();
 </head>
 <body>
     <?php
-    require_once 'src/connection.php';
+    require_once 'connection.php';
     $sql = "SELECT * FROM Events WHERE Event_status = 'open'";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
@@ -154,11 +154,11 @@ session_start();
                     <a class="nav-link active" href="index.php">Browse Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="src/user/user-event.php">My Registrations</a>
+                    <a class="nav-link" href="user-event.php">My Registrations</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="src/user/user-profile.php">My Profile</a>
+                    <a class="nav-link" href="user-profile.php">My Profile</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -290,7 +290,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'src/Verify/login.php'; 
+        window.location.href = 'login.php';
     });
 }
 
@@ -355,7 +355,7 @@ function updateEvent(eventId) {
 
     <div class="d-flex">
         <!-- Register button -->
-        <form action="src/user/register-proses.php" method="POST" class="d-inline">
+        <form action="register-proses.php" method="POST" class="d-inline">
             <input type="hidden" name="event_id" value="${eventId}">
             <button type="submit" class="btn btn-primary">Register</button>
         </form>

@@ -1,11 +1,11 @@
 <?php
-require_once __DIR__ . '../../connection.php';
+require_once 'connection.php';
 if(!isset($_POST['event_ID'])){
     header("location:event-manage.php");
     exit;
 }
 
-require_once '../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 

@@ -1,10 +1,10 @@
 <?php
     session_start();
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-        header("Location: ../Verify/login.php");  
+        header("Location: login.php");
         exit();
     } 
-    require_once __DIR__ .  '../../connection.php';
+    require_once'connection.php';
     $sql = "SELECT * FROM Events";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
@@ -295,7 +295,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = '../logout.php'; 
+        window.location.href = 'logout.php';
     });
 }
 

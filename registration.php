@@ -39,7 +39,7 @@ $fullName = $email = "";
                 array_push($errors, "Passwords do not match");
             }
 
-            require_once "../connection.php";
+            require_once "connection.php";
 
             $sql = "SELECT * FROM users WHERE email = ?";
             $stmt = $connection->prepare($sql);

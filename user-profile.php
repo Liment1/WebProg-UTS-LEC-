@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-    header("Location: ../Verify/login.php");  
+    header("Location:login.php");
     exit();
 } 
 
-require_once "../connection.php";
+require_once "connection.php";
 
 $userData = null;
 $fetchUserSQL = "SELECT name, email FROM users WHERE user_id = ?"; 
@@ -208,7 +208,7 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 timerProgressBar: true,
                 showConfirmButton: false
             }).then(() => {
-                window.location.href = '../Verify/login.php'; 
+                window.location.href = 'login.php';
             });
         }
     </script>

@@ -12,7 +12,7 @@
 <body>
     <div class="login-container">
     <?php
-require_once "../connection.php";
+require_once "connection.php";
 $email = "";  
 
 if (isset($_POST["login"])) {
@@ -38,7 +38,7 @@ if (isset($_POST["login"])) {
                         timer: 3000,
                         showConfirmButton: false
                     }).then(() => {
-                        window.location.href = '../admin/event-manage.php';
+                        window.location.href = 'event-manage.php';
                     });
                 </script>";
             } elseif ($user['role'] == 'user') {
@@ -50,7 +50,7 @@ if (isset($_POST["login"])) {
                         timer: 3000,
                         showConfirmButton: false
                     }).then(() => {
-                        window.location.href = '../../index.php';
+                        window.location.href = 'index.php';
                     });
                 </script>";
             }

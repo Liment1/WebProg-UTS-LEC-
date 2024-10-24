@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-    header("Location: ../Verify/login.php");  
+    header("Location:login.php");
     exit();
 } 
 
-require_once "../connection.php";
+require_once "connection.php";
 
 $userData = null;
 $fetchUserSQL = "SELECT name FROM users WHERE user_id = ?"; 
@@ -144,12 +144,12 @@ $userName = $userData ? $userData['name'] : '';
 </head>
 <body>
     <?php
-    // session_start();
-    // if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-    //     header("Location: src/Verify/login.php");  
-    //     exit();
-    // } 
-    require_once '../connection.php';
+     session_start();
+     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
+         header("Location: login.php");
+         exit();
+     }
+    require_once 'connection.php';
     $sql = "SELECT * FROM Events AS e JOIN registrations AS r ON (e.event_id = r.event_id) WHERE r.user_id = ?";
     $stmt = $connection->prepare($sql);
     $stmt->execute([$_SESSION['user_id']]);
@@ -293,7 +293,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = '../Verify/login.php'; 
+        window.location.href = 'login.php';
     });
 }
 

@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once __DIR__ . '../../connection.php';
+require_once 'connection.php';
 
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-    header("Location: ../Verify/login.php");  
+    header("Location: login.php");
     exit();
 } 
 

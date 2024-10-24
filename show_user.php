@@ -1,9 +1,9 @@
 <?php
-require __DIR__ . '../../connection.php';
+require 'connection.php';
 
 session_start();
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-    header("Location: ../Verify/login.php");  
+    header("Location:login.php");
     exit();
 } 
 
@@ -102,7 +102,7 @@ try {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = '../logout.php'; 
+        window.location.href = 'logout.php';
     });
 }
     </script>

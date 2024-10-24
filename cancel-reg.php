@@ -1,14 +1,14 @@
 <?php
-require_once __DIR__ . '../../connection.php';
+require_once 'connection.php';
 
 session_start();
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-    header("Location: ../Verify/login.php");  
+    header("Location:login.php");
     exit();
 } 
 
 if(!isset($_POST['event_id'])){
-    header("location:../../index.php");
+    header("location:index.php");
 }
 
 $curreventid =  'E'.str_pad($_POST['event_id'],4,"0",STR_PAD_LEFT);

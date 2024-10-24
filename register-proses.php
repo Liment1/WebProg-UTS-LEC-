@@ -1,5 +1,5 @@
 <?php
-require_once '../connection.php';
+require_once 'connection.php';
 session_start();
 
 $user_id = $_SESSION['user_id'];
@@ -19,7 +19,7 @@ if ($existingRegistration) {
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = '../../index.php';
+                window.location.href = 'index.php';
             }
         });
     </script>";
@@ -38,6 +38,6 @@ $stmt = $connection->prepare($sql);
 $stmt->execute([$user_id, $event_id]);
 echo "test";
 
-header('Location: ../../index.php');
+header('Location: index.php');
 exit();
 ?>
