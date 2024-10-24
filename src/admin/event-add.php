@@ -1,8 +1,7 @@
 <?php
-require_once __DIR__ . '../../connection.php';
-
 session_start();
-if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+require_once __DIR__ . '../../connection.php';
+if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
     header("Location: src/login.php");  
     exit();
 } 

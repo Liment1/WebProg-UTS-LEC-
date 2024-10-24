@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
+        header("Location: ../Verify/login.php");  
+        exit();
+    } 
+    require_once __DIR__ .  '../../connection.php';
+    $sql = "SELECT * FROM Events";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,20 +135,7 @@
 
     </style>
 </head>
-<body>
-    <?php
-    session_start();
-    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-        header("Location: ../Verify/login.php");  
-        exit();
-    } 
-    require_once __DIR__ .  '../../connection.php';
-    $sql = "SELECT * FROM Events";
-    $stmt = $connection->prepare($sql);
-    $stmt->execute();
-    $idx = 1;
-    ?>
-   
+<body>   
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="event-manage.php">Admin Page</a>
@@ -193,6 +191,7 @@
             <?php
             $EventsData = []; 
             while($Events = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $idx = (int) substr($Events['event_id'], 1);
                 $EventsData[$idx] = [
                     'event_date' => $Events['event_date'],
                     'banner_url' => $Events['banner_url'],
@@ -252,7 +251,6 @@
                 </div>
             </div>
             <?php
-            $idx += 1;
             }
             ?>
         </div>
@@ -311,7 +309,7 @@ function confirmDelete(itemId) {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to delete this event?
+                        Are you sure you want to delete this event? ${itemId}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -379,8 +377,9 @@ function updateEvent(eventId) {
                 <h6 class="mt-4">Capacity</h6>
                 <div class="input-group w-25">
                     <span class="input-group-text">${event.curr_participants}/</span>
-                    <input type="number" name="max_capacity" value="${sanitizedMaxParticipants}" class="form-control borderless" />
+                    <input type="number" name="max_capacity" min="1" id="maxCapacityInput" value="${sanitizedMaxParticipants}" class="form-control borderless" min="${event.curr_participants}" />
                 </div>
+                <small class="text-muted">Max participants cannot be less than the current number of participants.</small>
             </div>
 
             <div class="col-md-4">
@@ -429,6 +428,17 @@ function updateEvent(eventId) {
             }
 
             reader.readAsDataURL(file); 
+        }
+    });
+
+    updateEventForm.addEventListener('submit', function(event) {
+        if (parseInt(maxCapacityInput.value) < event.curr_participants) {
+            event.preventDefault(); 
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Capacity',
+                text: `Max participants cannot be less than the current number of participants (${event.curr_participants}).`,
+            });
         }
     });
 }

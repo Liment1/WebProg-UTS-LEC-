@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+    header("Location: ../Verify/login.php");  
+    exit();
+} 
 
 require_once "../connection.php";
 
@@ -124,7 +128,7 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">EventHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -133,10 +137,10 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Browse Events</a>
+                        <a class="nav-link" href="../../index.php">Browse Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="event-registration.php">My Registrations</a>
+                        <a class="nav-link" href="user-event.php">My Registrations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="user-profile.php">My Profile</a>
@@ -204,7 +208,7 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 timerProgressBar: true,
                 showConfirmButton: false
             }).then(() => {
-                window.location.href = 'login.php'; 
+                window.location.href = '../Verify/login.php'; 
             });
         }
     </script>

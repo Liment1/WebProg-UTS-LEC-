@@ -1,35 +1,12 @@
 <?php
-// session_start();
-// if (!isset($_SESSION["user"])) {
-//    header("Location: login.php");
-//    exit();
-// }
-
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'test';
-
-$conn = new mysqli($host, $user, $password, $dbname);
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
-
-// Query untuk mendapatkan event dengan status 'open'
-$query = "SELECT * FROM events WHERE status = 'open'";
-$result = $conn->query($query);
-if (!$result) {
-    die("Error pada query: " . $conn->error);
-}
-
-function formatDate($date) {
-    $datetime = new DateTime($date);
-    return [
-        'month' => $datetime->format('M'),
-        'day' => $datetime->format('d')
-    ];
-}
+session_start();
+    if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
+        header("Location: src/Verify/login.php");  
+        exit();
+    } 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +15,7 @@ function formatDate($date) {
     <title>Event Browser</title>
  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .event-card {
@@ -121,11 +99,50 @@ function formatDate($date) {
             left: 0;
             top: 4px;
         }
+
+        .borderless {
+        border: none;
+        border-bottom: 1px solid #ccc; 
+        padding: 5px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .borderless:focus {
+        outline: none;
+        border-bottom: 1px solid #000; 
+    }
+
+    #previewImage {
+        cursor: pointer;
+        width: 100%;
+        max-width: 100%; 
+        object-fit: cover;
+    }
+
+    #previewImage:hover {
+        opacity: 0.8;
+    }
+
+    .same-size-btn {
+        height: calc(2.25rem + 2px); 
+    }
+
+    
+</style>
+
     </style>
 </head>
 <body>
+    <?php
+    require_once 'src/connection.php';
+    $sql = "SELECT * FROM Events WHERE Event_status = 'open'";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    ?>
+   
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">EventHub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -134,149 +151,128 @@ function formatDate($date) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Browse Events</a>
+                    <a class="nav-link active" href="index.php">Browse Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="event-registration.php">My Registrations</a>
+                    <a class="nav-link" href="src/user/user-event.php">My Registrations</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="user-profile.php">My Profile</a>
+                    <a class="nav-link" href="src/user/user-profile.php">My Profile</a>
                 </li>
             </ul>
             <span class="navbar-text">
                 Welcome, <span id="userName">User</span>
-                <a href="logout.php" class="btn btn-warning">Logout</a>
+                <button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button>
             </span>
         </div>
     </div>
 </nav>
 
-<div class="container py-5">
-    <div class="search-container mb-4">
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
-            </div>
-            <div class="col-md-3 mb-3">
-                <select class="form-select" id="categoryFilter">
-                    <option value="">All Categories</option>
-                    <option value="music">Music</option>
-                    <option value="tech">Technology</option>
-                    <option value="sport">Sports</option>
-                    <option value="art">Arts & Culture</option>
-                </select>
-            </div>
-            <div class="col-md-3 mb-3">
-                <select class="form-select" id="dateFilter">
-                    <option value="">All Dates</option>
-                    <option value="today">Today</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
-                </select>
-            </div>
+    <div class="container pe-5">
+    <div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <select class="form-select" id="statusFilter">
+                <option value="all">All Registrations</option>
+                <option value="upcoming">Upcoming Events</option>
+                <option value="past">Past Events</option>
+                <option value="cancelled">Cancelled Events</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Search events..." id="searchEvents">
         </div>
     </div>
 
-    <div class="row g-4" id="eventsContainer"></div>
+    <div class="row g-4" id="registeredEvents">
+        
+    </div>
 </div>
-
-<div class="modal fade" id="eventModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="moda   l"></button>
-            </div>
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button class="btn btn-primary" id="registerButton">Register</button>
+        <div class="row g-4" id="eventsContainer">
+            <?php
+            $EventsData = []; 
+            while($Events = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $idx = (int) substr($Events['event_id'], 1);
+                $EventsData[$idx] = [
+                    'event_date' => $Events['event_date'],
+                    'banner_url' => $Events['banner_url'],
+                    'banner_name' => $Events['banner_name'],
+                    'event_status' => $Events['event_status'],
+                    'event_name' => $Events['event_name'],
+                    'location' => $Events['location'],
+                    'description' => $Events['description'],
+                    'event_time' => $Events['event_time'],
+                    'status' => $Events['event_status'],
+                    'curr_participants' => $Events['curr_participants'],
+                    'max_participants' => $Events['max_participants']
+                ];
+                $featured = false; 
+                $ymd = explode('-',$Events['event_date']); 
+                $month = $ymd[1];
+                $date = $ymd[2]; 
+                $CompleteTime = explode(':',$Events['event_time']); 
+                $eventTime = $CompleteTime[0].':'.$CompleteTime[1];
+                
+                $badgeClass = 'bg-primary'; 
+                if ($Events['event_status'] === 'open') {
+                    $badgeClass = 'bg-success'; 
+                } elseif ($Events['event_status'] === 'cancelled') {
+                    $badgeClass = 'bg-warning'; 
+                } elseif ($Events['event_status'] === 'closed') {
+                    $badgeClass = 'bg-danger'; 
+                }
+                ?>
+                <!-- display -->
+                <div class="col-md-4">
+    <div class="card event-card" onclick="updateEvent(<?= $idx ?>)" style="cursor: pointer;">
+        <div class="date-badge">
+            <div class="month"><?= htmlspecialchars($month) ?></div>
+            <div class="day"><?= htmlspecialchars($date) ?></div>
+        </div>
+        <img src=<?= 'src/admin/banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
+        <span class="category-badge badge <?= $badgeClass ?>"><?= htmlspecialchars( $Events['event_status']) ?></span>
+        <div class="card-body">
+            <h5 class="card-title"><?= htmlspecialchars( $Events['event_name']) ?></h5>
+            <p class="card-text text-muted">
+                <i class="fas fa-map-marker-alt me-2"></i><?= htmlspecialchars($Events['location']) ?><br>
+                <i class="fas fa-clock me-2"></i><?= htmlspecialchars($eventTime) ?>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="text-primary fw-bold"><?= htmlspecialchars($Events['curr_participants']).'/'. htmlspecialchars($Events['max_participants']) ?></span>
             </div>
         </div>
     </div>
 </div>
 
-    <div class="row g-4" id="eventsContainer"></div>
-
-<!-- Registration Modal  Modal Html -->
-<div class="modal fade" id="registrationModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Register for Event</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="registrationForm">
-                    <div class="mb-3">
-                        <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
-                    </div>
-                    <input type="hidden" id="eventId" value="">
-                    <button type="submit" class="btn btn-primary">Submit Registration</button>
-                </form>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>
+
+    <div class="modal fade" id="eventModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+            
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
 
-const events = [
-    {
-        id: 1,
-        title: "Summer Music Festival 2024",
-        image: "gambar1.jpg",
-        category: "music",
-        date: "2024-07-15",
-        time: "16:00",
-        location: "Central Park, New York",
-        price: "$50",
-        description: "Join us for the biggest music festival of the summer featuring top artists from around the world!",
-        featured: true,
-        schedule: [
-            "4:00 PM - Opening Act",
-            "5:30 PM - Local Bands Showcase",
-            "7:00 PM - Main Performance",
-            "9:00 PM - Headline Act",
-            "11:00 PM - Closing Ceremony"
-        ],
-        amenities: ["Food Courts", "Parking", "VIP Areas", "First Aid"],
-        organizer: "EventPro Productions"
-    },
-    {
-        id: 2,
-        title: "Tech Innovation Summit",
-        image: "gambar2.jpg",
-        category: "tech",
-        date: "2024-08-20",
-        time: "09:00",
-        location: "Convention Center, San Francisco",
-        price: "$299",
-        description: "Discover the latest technological innovations and network with industry leaders.",
-        featured: false,
-        schedule: [
-            "9:00 AM - Registration",
-            "10:00 AM - Keynote Speech",
-            "11:30 AM - Panel Discussion",
-            "1:00 PM - Networking Lunch",
-            "2:30 PM - Workshops"
-        ],
-        amenities: ["Wi-Fi", "Lunch Included", "Conference Materials"],
-        organizer: "TechCon Events"
-    },
-];
+<script>
+const EventsData = <?php echo json_encode($EventsData); ?>;
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -285,122 +281,96 @@ function formatDate(dateString) {
     return { month, day };
 }
 
-function createEventCards() {
-    const container = document.getElementById('eventsContainer');
-    container.innerHTML = '';
-
-    events.forEach(event => {
-        const formattedDate = formatDate(event.date);
-        const card = `
-            <div class="col-md-4" onclick="showEventDetails(${event.id})">
-                <div class="card event-card">
-                    ${event.featured ? '<div class="featured-badge"><span class="badge bg-warning">Featured</span></div>' : ''}
-                    <div class="date-badge">
-                        <div class="month">${formattedDate.month}</div>
-                        <div class="day">${formattedDate.day}</div>
-                    </div>
-                    <img src="${event.image}" class="card-img-top" alt="${event.title}">
-                    <span class="category-badge badge bg-primary">${event.category}</span>
-                    <div class="card-body">
-                        <h5 class="card-title">${event.title}</h5>
-                        <p class="card-text text-muted">
-                            <i class="fas fa-map-marker-alt me-2"></i>${event.location}<br>
-                            <i class="fas fa-clock me-2"></i>${event.time}
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">${event.price}</span>
-                            <button class="btn btn-outline-primary btn-sm">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.innerHTML += card;
+function logout() {
+    Swal.fire({
+        title: 'Logging out...',
+        text: 'You will be redirected to the login page.',
+        icon: 'info',
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = 'src/Verify/login.php'; 
     });
 }
 
-function showEventDetails(eventId) {
-    const event = events.find(e => e.id === eventId);
+function updateEvent(eventId) {
+    const event = EventsData[eventId];
     const modal = new bootstrap.Modal(document.getElementById('eventModal'));
-    const modalTitle = document.querySelector('#eventModal .modal-title');
     const modalBody = document.querySelector('#eventModal .modal-body');
-    const registerButton = document.getElementById('registerButton');
+    const modalHeader = document.querySelector('#eventModal .modal-header');
 
-    modalTitle.textContent = event.title;
+    modalHeader.innerHTML = `
+        <h5 class="modal-title fs-2 fw-bold">Event Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    `;
+
+    const sanitizedEventName = DOMPurify.sanitize(event.event_name);
+    const sanitizedBannerUrl = DOMPurify.sanitize("src/admin/banner/".concat(event.banner_url));
+    const sanitizedBannerName = DOMPurify.sanitize(event.banner_name);
+    const sanitizedDescription = DOMPurify.sanitize(event.description);
+    const sanitizedMaxParticipants = DOMPurify.sanitize(event.max_participants);
+    const sanitizedEventDate = DOMPurify.sanitize(event.event_date);
+    const sanitizedEventTime = DOMPurify.sanitize(event.event_time);
+    const sanitizedLocation = DOMPurify.sanitize(event.location);
+    const sanitizedstatus = DOMPurify.sanitize(event.status);
+
     modalBody.innerHTML = `
-        <img src="${event.image}" class="mb-4" alt="${event.title}">
+        <div class="modal-header pt-0">
+            <h2 class="fs-4 fw-bold">${sanitizedEventName}</h2>
+        </div>
+
+        <div class="d-block mb-4">
+            <img src="${sanitizedBannerUrl}" class="mb-4" alt="${sanitizedBannerName}" style="max-width: 100%;">
+        </div>
+
         <div class="row">
             <div class="col-md-8">
                 <h5>About This Event</h5>
-                <p>${event.description}</p>
-                
-                <h5 class="mt-4">Schedule</h5>
-                <ul class="event-details-list">
-                    ${event.schedule.map(item => `<li><i class="fas fa-clock"></i>${item}</li>`).join('')}
-                </ul>
+                <p>${sanitizedDescription}</p>
+
+                <h6 class="mt-4">Capacity</h6>
+                <p>${event.curr_participants}/${sanitizedMaxParticipants}</p>
             </div>
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Event Details</h6>
                         <ul class="event-details-list">
-                            <li><i class="fas fa-calendar"></i>${event.date}</li>
-                            <li><i class="fas fa-clock"></i>${event.time}</li>
-                            <li><i class="fas fa-map-marker-alt"></i>${event.location}</li>
-                            <li><i class="fas fa-ticket-alt"></i>${event.price}</li>
-                            <li><i class="fas fa-user"></i>${event.organizer}</li>
+                            <li><i class="fas fa-calendar"></i> ${sanitizedEventDate}</li>
+                            <li><i class="fas fa-clock"></i> ${sanitizedEventTime}</li>
+                            <li><i class="fas fa-map-marker-alt"></i> ${sanitizedLocation}</li>
+                            <li><i class="fas fa-chart-simple"></i> Status: ${sanitizedstatus.charAt(0).toUpperCase() + sanitizedstatus.slice(1)}</li>
                         </ul>
-                        
-                        <h6 class="mt-4">Amenities</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            ${event.amenities.map(amenity => 
-                                `<span class="badge bg-light text-dark">${amenity}</span>`
-                            ).join('')}
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    `;
 
-    registerButton.setAttribute('data-event-id', event.id);
-    registerButton.onclick = () => {
-        document.getElementById('eventId').value = event.id;
-        const registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
-        registrationModal.show();
-    };
+        <div class="mt-4 d-flex justify-content-between align-items-center">
+
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+
+    <div class="d-flex">
+        <!-- Register button -->
+        <form action="src/user/register-proses.php" method="POST" class="d-inline">
+            <input type="hidden" name="event_id" value="${eventId}">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>
+
+
+</div>
+
+        </div>
+    `;
 
     modal.show();
 }
 
-document.getElementById('registrationForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const eventId = document.getElementById('eventId').value;
-    const fullName = document.getElementById('fullName').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    const email = document.getElementById('email').value;
-
-    // Handle registration logic (e.g., AJAX request)
-    console.log(`Registering for event ID: ${eventId}, Name: ${fullName},Phone Number: ${phoneNumber}, Email: ${email}`);
-
-    const registrationModal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
-    registrationModal.hide();
-    Swal.fire('Registered!', 'You have successfully registered for the event.', 'success');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    createEventCards();
-
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredEvents = events.filter(event => 
-            event.title.toLowerCase().includes(searchTerm) ||
-            event.description.toLowerCase().includes(searchTerm)
-        );
-
-        // Update event cards with filteredEvents here if needed
-    });
-});
 </script>
 
 </body>
