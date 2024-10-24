@@ -161,11 +161,11 @@
 
     <div class="container pe-5">
         <div class="search-container mb-4">
-            <div class="row">
-                <div class="col-md-5 mb-3">
+            <div class="d-flex justify-content-end">
+                <!-- <div class="col-md-5 mb-3">
                     <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
-                </div>
-                <div class="col-md-3 mb-3">
+                </div> -->
+                <!-- <div class="col-md-3 mb-3">
                     <select class="form-select" id="categoryFilter">
                         <option value="">All Categories</option>
                         <option value="music">Music</option>
@@ -181,9 +181,9 @@
                         <option value="week">This Week</option>
                         <option value="month">This Month</option>
                     </select>
-                </div>
-                <div class="col-md-1 d-flex pb-3 align-items-center">
-                    <button class="btn btn-primary btn-md" onclick="addEvents()">Add</button>
+                </div> -->
+                <div class="pb-3 align-items-center">
+                    <button class="btn btn-primary btn-md" onclick="addEvents()">Add Events</button>
                 </div>
             </div>
         </div>  

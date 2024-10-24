@@ -157,7 +157,7 @@ $userName = $userData ? $userData['name'] : '';
    
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">EventHub</a>
+            <a class="navbar-brand" href="../../index.php">EventHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -183,9 +183,9 @@ $userName = $userData ? $userData['name'] : '';
     <div class="container pe-5">
     <div class="container py-5">
     <div class="row mb-4">
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <input type="text" class="form-control" placeholder="Search events..." id="searchEvents">
-        </div>
+        </div> -->
     </div>
 
     <div class="row g-4" id="registeredEvents">
