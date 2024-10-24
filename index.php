@@ -1,9 +1,30 @@
 <?php
 session_start();
+    require_once 'connection.php';
+//     error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
         header("Location: login.php");
         exit();
     } 
+    
+    if (isset($_POST['error_message'])) {
+    // Safely escape the error message
+    $error_message = htmlspecialchars($_POST['error_message']);
+    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+    echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '$error_message',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>";
+}
+?>
 ?>
 
 
@@ -135,8 +156,8 @@ session_start();
 </head>
 <body>
     <?php
-    require_once 'connection.php';
-    $sql = "SELECT * FROM Events WHERE Event_status = 'open'";
+    
+    $sql = "SELECT * FROM events WHERE Event_status = 'open'";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
 
@@ -230,7 +251,7 @@ session_start();
             <div class="month"><?= htmlspecialchars($month) ?></div>
             <div class="day"><?= htmlspecialchars($date) ?></div>
         </div>
-        <img src=<?= 'src/admin/banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
+        <img src=<?= 'banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
         <span class="category-badge badge <?= $badgeClass ?>"><?= htmlspecialchars( $Events['event_status']) ?></span>
         <div class="card-body">
             <h5 class="card-title"><?= htmlspecialchars( $Events['event_name']) ?></h5>
@@ -290,7 +311,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'login.php';
+        window.location.href = 'logout.php';
     });
 }
 
@@ -374,4 +395,4 @@ function updateEvent(eventId) {
 </script>
 
 </body>
-</html>
+</html> 

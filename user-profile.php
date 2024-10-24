@@ -1,11 +1,15 @@
 <?php
 session_start();
+require_once "connection.php";
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
     header("Location:login.php");
     exit();
 } 
 
-require_once "connection.php";
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 
 $userData = null;
 $fetchUserSQL = "SELECT name, email FROM users WHERE user_id = ?"; 
@@ -35,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $stmt->execute([$updatedName, $updatedEmail, $_SESSION["user_id"]]);
     }
-    
+
     if ($stmt) {
         $userName = $updatedName; 
         $userEmail = $updatedEmail;
@@ -71,8 +75,6 @@ $stmt->execute([$_SESSION["user_id"]]);
 $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -208,7 +210,7 @@ $eventHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 timerProgressBar: true,
                 showConfirmButton: false
             }).then(() => {
-                window.location.href = 'login.php';
+                window.location.href = 'logout.php';
             });
         }
     </script>

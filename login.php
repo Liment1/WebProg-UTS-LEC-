@@ -1,3 +1,40 @@
+<?php
+session_start();
+require_once "connection.php";
+
+$email = "";  
+$error = '';  // A variable to store the error message
+
+if (isset($_POST["login"])) {
+    $email = $_POST["email"];  
+    $password = $_POST["password"];
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($user) {
+        if (password_verify($password, $user["password"])) {
+            // Set session variables
+            $_SESSION["role"] = $user["role"];
+            $_SESSION["user_id"] = $user["user_id"];
+            
+            if ($user['role'] == 'admin') {
+                header("Location: event-manage.php");
+                exit();
+            } elseif ($user['role'] == 'user') {
+                header("Location: index.php");
+                exit();
+            }
+        } else {
+            $error = "Password does not match."; // Incorrect password
+        }
+    } else {
+        $error = "Email does not match."; // Email not found
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,75 +48,6 @@
 </head>
 <body>
     <div class="login-container">
-    <?php
-require_once "connection.php";
-$email = "";  
-
-if (isset($_POST["login"])) {
-    $email = $_POST["email"];  
-    $password = $_POST["password"];
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $connection->prepare($sql);
-    $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    if ($user) {
-        if (password_verify($password, $user["password"])) {
-            session_start();
-            $_SESSION["role"] = $user["role"];
-            $_SESSION["user_id"] = $user["user_id"];
-            
-            if ($user['role'] == 'admin') {
-                echo "<script>
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Login successful!',
-                        icon: 'success',
-                        timer: 3000,
-                        showConfirmButton: false
-                    }).then(() => {
-                        window.location.href = 'event-manage.php';
-                    });
-                </script>";
-            } elseif ($user['role'] == 'user') {
-                echo "<script>
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Login successful!',
-                        icon: 'success',
-                        timer: 3000,
-                        showConfirmButton: false
-                    }).then(() => {
-                        window.location.href = 'index.php';
-                    });
-                </script>";
-            }
-
-        } else {
-            echo "<script>
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'Password does not match.',
-                    icon: 'error',
-                    timer: 2000,
-                    showConfirmButton: false
-                });
-            </script>";
-        }
-    } else {
-        echo "<script>
-            Swal.fire({
-                title: 'Error!',
-                text: 'Email does not match.',
-                icon: 'error',
-                timer: 2000,
-                showConfirmButton: false
-            });
-        </script>";
-    }
-}
-?>
-
        <form action="login.php" method="post" novalidate>
             <div class="form-floating mb-3">
                 <input type="email" class="form-control bg-transparent text-light <?php echo !empty($emailError) ? 'is-invalid' : ''; ?>" id="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>">
@@ -106,8 +74,21 @@ if (isset($_POST["login"])) {
             </div>
         </form>
 
-
-     <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
+        <div><p>Not registered yet? <a href="registration.php">Register Here</a></p></div>
     </div>
+
+    <?php if (!empty($error)): ?>
+    <script>
+        Swal.fire({
+            title: 'Error!',
+            text: '<?php echo $error; ?>',
+            icon: 'error',
+            timer: 2000,
+            showConfirmButton: false
+        });
+    </script>
+    <?php endif; ?>
+
 </body>
 </html>
+

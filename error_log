@@ -1,0 +1,891 @@
+[25-Oct-2024 02:54:02 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/evef9533/public_html/connection.php:2
+Stack trace:
+#0 /home/evef9533/public_html/connection.php(2): PDO->__construct()
+#1 /home/evef9533/public_html/login.php(15): require_once('/home/evef9533/...')
+#2 {main}
+  thrown in /home/evef9533/public_html/connection.php on line 2
+[25-Oct-2024 02:54:31 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 03:00:28 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 03:00:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 03:00:52 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 14
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 14
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 15
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 15
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 17
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 17
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 18
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 18
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "event_name" in /home/evef9533/public_html/event-add.php on line 35
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "status" in /home/evef9533/public_html/event-add.php on line 36
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "date" in /home/evef9533/public_html/event-add.php on line 37
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "time" in /home/evef9533/public_html/event-add.php on line 38
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "location" in /home/evef9533/public_html/event-add.php on line 39
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "description" in /home/evef9533/public_html/event-add.php on line 40
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Warning:  Undefined array key "max_capacity" in /home/evef9533/public_html/event-add.php on line 42
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'event_name' cannot be null in /home/evef9533/public_html/event-add.php:34
+Stack trace:
+#0 /home/evef9533/public_html/event-add.php(34): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-add.php on line 34
+[25-Oct-2024 03:01:02 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 03:27:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:28:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:28:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:29:01 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:29:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:29:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:29:37 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:29:39 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:30:36 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:31:18 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:32:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:33:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:33:33 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:33:56 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:34:39 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:34:42 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:34:47 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 03:35:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:09 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 31
+[25-Oct-2024 03:36:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:36:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:18 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:18 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 31
+[25-Oct-2024 03:36:18 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:36:19 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:36:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:38:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:40:27 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:40:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:54 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:40:56 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:40:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:40:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:41:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:41:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:41:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:41:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:41:17 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:41:19 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:53 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:41:55 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:41:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:57 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:58 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:58 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:41:58 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:42:00 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:42:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:04 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/event-add.php on line 5
+[25-Oct-2024 03:42:08 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:19 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:42:22 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:22 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:42:22 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 62
+[25-Oct-2024 03:42:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:42:29 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 38
+[25-Oct-2024 03:42:29 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:42:44 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:44 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:42:44 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:42:48 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:42:49 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:42:49 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:42:58 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:00 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:43:00 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:43:05 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:43:06 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:43:19 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 03:43:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:43:24 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:43:26 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:43:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:43:28 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:44:02 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:44:04 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:44:04 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:44:04 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:44:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:44:36 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:44:37 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:44:37 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:45:40 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:45:40 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:45:40 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:45:41 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:45:42 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:45:43 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:45:43 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:45:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:05 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:07 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:46:07 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:08 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:09 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:09 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:46:09 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:46:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:46:14 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:27 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:46:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:46:29 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:46:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:47:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:47:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:47:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:47:25 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:47:25 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:48:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:48:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:48:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:48:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:48:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:48:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:48:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:48:34 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:49:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:49:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:49:35 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:49:35 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 37
+[25-Oct-2024 03:49:52 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:49:52 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:49:53 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:49:53 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:50:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:50:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:50:50 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:50:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:50:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:50:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:51:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/event-manage.php on line 3
+[25-Oct-2024 03:51:20 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/event-manage.php on line 4
+[25-Oct-2024 03:51:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:51:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:51:25 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/event-manage.php on line 3
+[25-Oct-2024 03:51:25 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/event-manage.php on line 4
+[25-Oct-2024 03:51:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:51:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:51:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/event-manage.php on line 3
+[25-Oct-2024 03:51:29 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/event-manage.php on line 4
+[25-Oct-2024 03:51:39 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:51:39 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 32
+[25-Oct-2024 03:52:15 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:52:19 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:52:22 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:52:59 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:52:59 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:53:03 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:53:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:53:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:53:06 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:53:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:53:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:53:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:56:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:56:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:56:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:56:11 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:56:16 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:56:16 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 03:59:07 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:59:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 03:59:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 04:00:30 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/event-add.php on line 5
+[25-Oct-2024 04:00:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:18 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:20 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:01:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:24 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:01:25 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:49 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:49 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:01:50 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:50 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:01:53 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:01:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:59 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:01:59 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 24
+[25-Oct-2024 04:02:02 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:02 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:03 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:33 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:33 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:33 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:34 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:34 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:34 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:34 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:46 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:46 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:47 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:47 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:47 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:48 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:48 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:48 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:02:48 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:02:48 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:15 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:15 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:16 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:16 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:19 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:19 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:23 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:23 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:26 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:27 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:29 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:29 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:29 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:30 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:30 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:30 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:03:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:03:58 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:04:01 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:04:01 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:04:01 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:04:01 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:04:02 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:04:02 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:04:03 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:04:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:07 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:11 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:11 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:11 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:05:39 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:39 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:05:42 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:42 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:05:42 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:42 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:05:48 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:48 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:05:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:51 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:05:53 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:05:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:06:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:06:06 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:06:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:06:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 4
+[25-Oct-2024 04:06:10 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 22
+[25-Oct-2024 04:06:28 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/login.php on line 11
+[25-Oct-2024 04:06:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/login.php on line 11
+[25-Oct-2024 04:07:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:19 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:19 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:20 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:21 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:21 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:21 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:28 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:07:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:13 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:14 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:14 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:16 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:16 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:16 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:17 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:17 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:17 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:17 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:18 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 3
+[25-Oct-2024 04:08:18 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:08:44 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 21
+[25-Oct-2024 04:09:35 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 68
+[25-Oct-2024 04:09:35 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 68
+[25-Oct-2024 04:09:37 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 20
+[25-Oct-2024 04:09:38 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 20
+[25-Oct-2024 04:09:38 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 20
+[25-Oct-2024 04:09:39 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 20
+[25-Oct-2024 04:10:10 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 69
+[25-Oct-2024 04:10:10 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 69
+[25-Oct-2024 04:10:28 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:10:28 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:10:41 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 71
+[25-Oct-2024 04:10:41 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 71
+[25-Oct-2024 04:10:44 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 23
+[25-Oct-2024 04:10:56 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 71
+[25-Oct-2024 04:10:56 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 71
+[25-Oct-2024 04:10:58 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 15
+[25-Oct-2024 04:10:58 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 23
+[25-Oct-2024 04:11:00 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 15
+[25-Oct-2024 04:11:00 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 23
+[25-Oct-2024 04:11:10 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:11:10 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:11:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 9
+[25-Oct-2024 04:11:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/connection.php:2) in /home/evef9533/public_html/login.php on line 24
+[25-Oct-2024 04:13:31 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:13:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:13:32 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:13:32 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 72
+[25-Oct-2024 04:14:29 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:14:29 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:14:29 Asia/Jakarta] PHP Warning:  Undefined variable $email in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:14:29 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/login.php on line 70
+[25-Oct-2024 04:15:04 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:16:43 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:16:45 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 04:16:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:16:56 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 04:17:54 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 04:18:01 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:9
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(9): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 9
+[25-Oct-2024 04:18:23 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/event-manage.php:10
+Stack trace:
+#0 /home/evef9533/public_html/event-manage.php(10): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/event-manage.php on line 10
+[25-Oct-2024 04:22:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:26:57 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/event-delete.php:20) in /home/evef9533/public_html/event-delete.php on line 33
+[25-Oct-2024 04:28:23 Asia/Jakarta] PHP Warning:  unlink(banner/): Is a directory in /home/evef9533/public_html/event-delete.php on line 23
+[25-Oct-2024 04:28:23 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/event-delete.php:20) in /home/evef9533/public_html/event-delete.php on line 35
+[25-Oct-2024 04:30:53 Asia/Jakarta] PHP Warning:  unlink(banner/): Is a directory in /home/evef9533/public_html/event-delete.php on line 22
+[25-Oct-2024 04:31:03 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:31:54 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:32:07 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:32:08 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/index.php:145
+Stack trace:
+#0 /home/evef9533/public_html/index.php(145): PDOStatement->execute()
+#1 {main}
+  thrown in /home/evef9533/public_html/index.php on line 145
+[25-Oct-2024 04:32:55 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:33:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:33:36 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:35:21 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:6) in /home/evef9533/public_html/User-manage.php on line 9
+[25-Oct-2024 04:35:30 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:35:31 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:6) in /home/evef9533/public_html/User-manage.php on line 9
+[25-Oct-2024 04:36:45 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:4) in /home/evef9533/public_html/User-manage.php on line 10
+[25-Oct-2024 04:36:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:36:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:4) in /home/evef9533/public_html/User-manage.php on line 10
+[25-Oct-2024 04:38:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:4) in /home/evef9533/public_html/User-manage.php on line 10
+[25-Oct-2024 04:39:12 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/User-manage.php:4) in /home/evef9533/public_html/User-manage.php on line 10
+[25-Oct-2024 04:40:46 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:41:08 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:41:08 Asia/Jakarta] PHP Warning:  Undefined array key "role" in /home/evef9533/public_html/event-manage.php on line 8
+[25-Oct-2024 04:41:33 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:41:34 Asia/Jakarta] PHP Warning:  Undefined array key "role" in /home/evef9533/public_html/event-manage.php on line 8
+[25-Oct-2024 04:41:36 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:41:37 Asia/Jakarta] PHP Warning:  Undefined array key "role" in /home/evef9533/public_html/event-manage.php on line 8
+[25-Oct-2024 04:42:47 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:45:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:45:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:45:27 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 44
+[25-Oct-2024 04:45:27 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 44
+[25-Oct-2024 04:45:50 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 28
+[25-Oct-2024 04:45:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 44
+[25-Oct-2024 04:46:20 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 30
+[25-Oct-2024 04:46:22 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 45
+[25-Oct-2024 04:46:24 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 30
+[25-Oct-2024 04:46:26 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 45
+[25-Oct-2024 04:46:31 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/evef9533/public_html/login.php on line 30
+[25-Oct-2024 04:46:33 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:1) in /home/evef9533/public_html/login.php on line 45
+[25-Oct-2024 04:48:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:26) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 04:48:48 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:26) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 04:48:57 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:26) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 04:49:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:26) in /home/evef9533/public_html/login.php on line 36
+[25-Oct-2024 04:49:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/login.php:29) in /home/evef9533/public_html/login.php on line 39
+[25-Oct-2024 04:57:24 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 18 in /home/evef9533/public_html/login.php on line 87
+[25-Oct-2024 04:57:50 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:57:53 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:17 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:18 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:20 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:21 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:21 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:21 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:22 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:22 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:22 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:22 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:22 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:23 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:23 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 04:58:26 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/login.php on line 88
+[25-Oct-2024 05:02:35 Asia/Jakarta] PHP Warning:  Undefined variable $events in /home/evef9533/public_html/show_user.php on line 82
+[25-Oct-2024 05:02:35 Asia/Jakarta] PHP Warning:  foreach() argument must be of type array|object, null given in /home/evef9533/public_html/show_user.php on line 82
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 14
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 14
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Deprecated:  basename(): Passing null to parameter #1 ($path) of type string is deprecated in /home/evef9533/public_html/event-add.php on line 14
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 15
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 15
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Deprecated:  move_uploaded_file(): Passing null to parameter #1 ($from) of type string is deprecated in /home/evef9533/public_html/event-add.php on line 15
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 17
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 17
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "banner" in /home/evef9533/public_html/event-add.php on line 18
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/event-add.php on line 18
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "event_name" in /home/evef9533/public_html/event-add.php on line 35
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "status" in /home/evef9533/public_html/event-add.php on line 36
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "date" in /home/evef9533/public_html/event-add.php on line 37
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "time" in /home/evef9533/public_html/event-add.php on line 38
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "location" in /home/evef9533/public_html/event-add.php on line 39
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "description" in /home/evef9533/public_html/event-add.php on line 40
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Warning:  Undefined array key "max_capacity" in /home/evef9533/public_html/event-add.php on line 42
+[25-Oct-2024 05:10:03 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'event_name' cannot be null in /home/evef9533/public_html/event-add.php:34
+Stack trace:
+#0 /home/evef9533/public_html/event-add.php(34): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/event-add.php on line 34
+[25-Oct-2024 05:39:25 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 18
+[25-Oct-2024 05:39:50 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 20
+[25-Oct-2024 05:39:50 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:20) in /home/evef9533/public_html/delete-user.php on line 22
+[25-Oct-2024 05:39:55 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 20
+[25-Oct-2024 05:39:55 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:20) in /home/evef9533/public_html/delete-user.php on line 22
+[25-Oct-2024 05:42:15 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 18
+[25-Oct-2024 05:43:57 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:43:57 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:21) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:44:00 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:44:00 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:21) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:44:03 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:44:03 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:21) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:44:14 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:44:14 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:21) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:44:18 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:44:18 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:21) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:44:36 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/delete-user.php on line 21
+[25-Oct-2024 05:44:36 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:16) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:45:11 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/delete-user.php:16) in /home/evef9533/public_html/delete-user.php on line 23
+[25-Oct-2024 05:51:17 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 05:53:47 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/register-proses.php:39) in /home/evef9533/public_html/register-proses.php on line 41
+[25-Oct-2024 05:55:47 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:05:34 Asia/Jakarta] PHP Warning:  Undefined array key "user_id" in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:05:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:34
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(34): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 34
+[25-Oct-2024 06:06:58 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:06:58 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:06:58 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:34
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(34): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 34
+[25-Oct-2024 06:07:10 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:10 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:10 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:34
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(34): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 34
+[25-Oct-2024 06:07:25 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:25 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:25 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:34
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(34): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 34
+[25-Oct-2024 06:07:45 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:45 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 8
+[25-Oct-2024 06:07:45 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/register-proses.php on line 8
+[25-Oct-2024 06:07:45 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:35
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(35): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 35
+[25-Oct-2024 06:07:53 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 7
+[25-Oct-2024 06:07:53 Asia/Jakarta] PHP Warning:  Undefined global variable $_SESSION in /home/evef9533/public_html/register-proses.php on line 8
+[25-Oct-2024 06:07:53 Asia/Jakarta] PHP Warning:  Trying to access array offset on value of type null in /home/evef9533/public_html/register-proses.php on line 8
+[25-Oct-2024 06:07:53 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_id' cannot be null in /home/evef9533/public_html/register-proses.php:35
+Stack trace:
+#0 /home/evef9533/public_html/register-proses.php(35): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/register-proses.php on line 35
+[25-Oct-2024 06:10:15 Asia/Jakarta] PHP Parse error:  Unmatched '}' in /home/evef9533/public_html/index.php on line 11
+[25-Oct-2024 06:10:25 Asia/Jakarta] PHP Parse error:  Unmatched '}' in /home/evef9533/public_html/index.php on line 11
+[25-Oct-2024 06:10:29 Asia/Jakarta] PHP Parse error:  Unmatched '}' in /home/evef9533/public_html/index.php on line 11
+[25-Oct-2024 06:10:31 Asia/Jakarta] PHP Parse error:  Unmatched '}' in /home/evef9533/public_html/index.php on line 11
+[25-Oct-2024 06:10:55 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:02 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:02 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:03 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:03 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:03 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:03 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:05 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:05 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:05 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:06 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:06 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:06 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:06 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:11 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:11 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:11 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:11 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:13 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:18 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 143 in /home/evef9533/public_html/index.php on line 392
+[25-Oct-2024 06:11:48 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:210
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:54 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:210
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:54 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:210
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:55 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:11:55 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:11:56 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:210
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:58 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:11:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:210
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 210
+[25-Oct-2024 06:12:17 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:18 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:20 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:25 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:33 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:34 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:12:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 192
+[25-Oct-2024 06:13:41 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:13:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:12 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:14 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Warning:  Undefined variable $stmt in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:14:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/evef9533/public_html/index.php:206
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 206
+[25-Oct-2024 06:15:16 Asia/Jakarta] PHP Parse error:  syntax error, unexpected end of file in /home/evef9533/public_html/index.php on line 38
+[25-Oct-2024 06:19:37 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/index.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:41 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/index.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:43 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/index.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:58 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:19:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/index.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/index.php on line 92
+[25-Oct-2024 06:21:02 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:21:20 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:18) in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:22:32 Asia/Jakarta] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:22:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:20) in /home/evef9533/public_html/user-event.php on line 151
+[25-Oct-2024 06:22:32 Asia/Jakarta] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/evef9533/public_html/user-event.php on line 149
+[25-Oct-2024 06:22:32 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/user-event.php:20) in /home/evef9533/public_html/user-event.php on line 151
+[25-Oct-2024 06:25:02 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:24
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(24): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 24
+[25-Oct-2024 06:25:07 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:24
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(24): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 24
+[25-Oct-2024 06:25:09 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:24
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(24): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 24
+[25-Oct-2024 06:25:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:25:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function ni_set() in /home/evef9533/public_html/user-event.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 6
+[25-Oct-2024 06:26:22 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:25
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(25): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 25
+[25-Oct-2024 06:26:47 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:25
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(25): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 25
+[25-Oct-2024 06:26:49 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.Events' doesn't exist in /home/evef9533/public_html/user-event.php:25
+Stack trace:
+#0 /home/evef9533/public_html/user-event.php(25): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/user-event.php on line 25
+[25-Oct-2024 06:38:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/cancel-reg.php:21) in /home/evef9533/public_html/cancel-reg.php on line 28

@@ -23,7 +23,7 @@ try {
     $stmt = $connection->prepare("SELECT e.Event_name, u.User_Id AS User_id, u.Name AS User_Name 
                                   FROM events AS e 
                                   JOIN registrations AS r ON (e.Event_ID = r.Event_ID) 
-                                  JOIN Users AS u ON (r.User_ID = u.USER_ID) 
+                                  JOIN users AS u ON (r.User_ID = u.USER_ID) 
                                   WHERE e.Event_id = :id");
     $stmt->execute(['id' => $id]);
 

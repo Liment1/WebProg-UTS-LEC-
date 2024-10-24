@@ -18,11 +18,10 @@ $query = "UPDATE events
             SET curr_participants = curr_participants-1 
             WHERE Event_id = ?";
 $stmt = $connection->prepare($query);
-echo "$curreventid";
 $stmt->execute([$curreventid]);
 
 $query = "DELETE FROM registrations WHERE user_id = ? AND Event_id =?";
 $stmt = $connection->prepare($query);
 $stmt->execute([$curruserid, $curreventid]);
 
-header("location:../user/user-event.php");
+header("location:user-event.php");

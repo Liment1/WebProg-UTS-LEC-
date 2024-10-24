@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
-    header("Location:login.php");
+    header("Location: login.php");  
     exit();
 } 
 
@@ -144,27 +144,21 @@ $userName = $userData ? $userData['name'] : '';
 </head>
 <body>
     <?php
-     session_start();
-     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
-         header("Location: login.php");
-         exit();
-     }
-    require_once 'connection.php';
-    $sql = "SELECT * FROM Events AS e JOIN registrations AS r ON (e.event_id = r.event_id) WHERE r.user_id = ?";
+    $sql = "SELECT * FROM events AS e JOIN registrations AS r ON (e.event_id = r.event_id) WHERE r.user_id = ?";
     $stmt = $connection->prepare($sql);
     $stmt->execute([$_SESSION['user_id']]);
     ?>
    
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="../../index.php">EventHub</a>
+            <a class="navbar-brand" href="index.php">EventHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.php">Browse Events</a>
+                        <a class="nav-link" href="index.php">Browse Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="user-event.php">My Registrations</a>
@@ -233,7 +227,7 @@ $userName = $userData ? $userData['name'] : '';
             <div class="month"><?= htmlspecialchars($month) ?></div>
             <div class="day"><?= htmlspecialchars($date) ?></div>
         </div>
-        <img src=<?= '../admin/banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
+        <img src=<?= 'banner/'.htmlspecialchars($Events['banner_url']) ?> class="card-img-top" alt=<?= $Events['banner_name'] ?>>
         <span class="category-badge badge <?= $badgeClass ?>"><?= htmlspecialchars( $Events['event_status']) ?></span>
         <div class="card-body">
             <h5 class="card-title"><?= htmlspecialchars( $Events['event_name']) ?></h5>
@@ -293,7 +287,7 @@ function logout() {
         timerProgressBar: true,
         showConfirmButton: false
     }).then(() => {
-        window.location.href = 'login.php';
+        window.location.href = 'login.php'; 
     });
 }
 
@@ -309,7 +303,7 @@ function updateEvent(eventId) {
     `;
 
     const sanitizedEventName = DOMPurify.sanitize(event.event_name);
-    const sanitizedBannerUrl = DOMPurify.sanitize("../admin/banner/".concat(event.banner_url));
+    const sanitizedBannerUrl = DOMPurify.sanitize("banner/".concat(event.banner_url));
     const sanitizedBannerName = DOMPurify.sanitize(event.banner_name);
     const sanitizedDescription = DOMPurify.sanitize(event.description);
     const sanitizedMaxParticipants = DOMPurify.sanitize(event.max_participants);

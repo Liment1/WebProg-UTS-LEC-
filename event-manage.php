@@ -1,15 +1,16 @@
 <?php
     session_start();
+    require_once'connection.php';
+
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'admin') {
         header("Location: login.php");
         exit();
     } 
-    require_once'connection.php';
-    $sql = "SELECT * FROM Events";
+    $sql = "SELECT * FROM events";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
     ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -242,7 +243,7 @@
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $idx ?>)">Delete</button>
                             <button class="btn btn-warning btn-sm" onclick="updateEvent(<?= $idx ?>)">Edit</button>
-                            <form action="event-export.php" method="POST">
+                            <form action="event-export.php" class="m-0" method="POST">
                                 <input type="text" name="event_ID" value=<?= $idx ?> hidden> 
                                 <input type="submit" class="btn btn-success btn-sm" value="Export">
                             </form>
@@ -309,7 +310,7 @@ function confirmDelete(itemId) {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to delete this event? ${itemId}
+                        Are you sure you want to delete this event?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

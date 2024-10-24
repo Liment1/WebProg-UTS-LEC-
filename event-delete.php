@@ -17,12 +17,13 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row) {
     $imageFile = $row['banner_url'];
     $imagePath = 'banner/' . $imageFile;
-    echo $imagePath;
 
     if (file_exists($imagePath)) {
         unlink($imagePath);  
     }
 }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 
 $query = "DELETE FROM events 
