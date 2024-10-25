@@ -1,8 +1,6 @@
 <?php
 session_start();
     require_once 'connection.php';
-//     error_reporting(E_ALL);
-// ini_set('display_errors', 1);
 
     if (!(isset($_SESSION['role'])) || $_SESSION['role'] != 'user') {
         header("Location: login.php");
@@ -10,7 +8,6 @@ session_start();
     } 
     
     if (isset($_POST['error_message'])) {
-    // Safely escape the error message
     $error_message = htmlspecialchars($_POST['error_message']);
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
     echo "<script>
@@ -23,9 +20,20 @@ session_start();
             });
         });
     </script>";
-}
+    }
+    
+  
+$fetchUserSQL = "SELECT name FROM users WHERE user_id = ?"; 
+$stmt = $connection->prepare($fetchUserSQL);
+$stmt->execute([$_SESSION["user_id"]]);
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$userName = $userData ? $userData['name'] : '';
+
+
 ?>
-?>
+
 
 
 <!DOCTYPE html>
@@ -183,7 +191,7 @@ session_start();
                 </li>
             </ul>
             <span class="navbar-text">
-                Welcome, <span id="userName">User</span>
+                Welcome, <span id="userName"><?= htmlspecialchars($userName) ?></span>
                 <button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button>
             </span>
         </div>
@@ -327,7 +335,7 @@ function updateEvent(eventId) {
     `;
 
     const sanitizedEventName = DOMPurify.sanitize(event.event_name);
-    const sanitizedBannerUrl = DOMPurify.sanitize("src/admin/banner/".concat(event.banner_url));
+    const sanitizedBannerUrl = DOMPurify.sanitize("banner/".concat(event.banner_url));
     const sanitizedBannerName = DOMPurify.sanitize(event.banner_name);
     const sanitizedDescription = DOMPurify.sanitize(event.description);
     const sanitizedMaxParticipants = DOMPurify.sanitize(event.max_participants);

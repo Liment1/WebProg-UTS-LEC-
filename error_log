@@ -889,3 +889,117 @@ Stack trace:
 #1 {main}
   thrown in /home/evef9533/public_html/user-event.php on line 25
 [25-Oct-2024 06:38:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/evef9533/public_html/cancel-reg.php:21) in /home/evef9533/public_html/cancel-reg.php on line 28
+[25-Oct-2024 14:02:51 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:02:51 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:02 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:02 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:02 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:02 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:08 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:08 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:57 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:57 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:58 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:04:58 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:05:00 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:05:00 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 186
+[25-Oct-2024 14:05:45 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:05:45 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:05:46 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:05:46 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:05:50 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:05:50 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 191
+[25-Oct-2024 14:06:29 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:29 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:30 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:30 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:31 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:34 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:34 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:36 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:36 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:40 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:06:40 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 192
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:08 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:09 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:11 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:11 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:11 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:11 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:12 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:13 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:13 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:22 Asia/Jakarta] PHP Warning:  Undefined variable $userName in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:22 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/evef9533/public_html/LEC/index.php on line 193
+[25-Oct-2024 14:07:54 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/LEC/index.php on line 404
+[25-Oct-2024 14:07:54 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/LEC/index.php on line 404
+[25-Oct-2024 14:07:56 Asia/Jakarta] PHP Parse error:  Unclosed '{' on line 10 in /home/evef9533/public_html/LEC/index.php on line 404
+[25-Oct-2024 20:57:02 Asia/Jakarta] PHP Warning:  Undefined array key "user_name" in /home/evef9533/public_html/LEC-Copy/event-manage.php on line 156
+[25-Oct-2024 20:57:09 Asia/Jakarta] PHP Warning:  Undefined array key "name" in /home/evef9533/public_html/LEC-Copy/event-manage.php on line 156
+[25-Oct-2024 21:48:53 Asia/Jakarta] PHP Warning:  Undefined variable $connection in /home/evef9533/public_html/LEC-Copy/forgot_password_process.php on line 16
+[25-Oct-2024 21:48:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/forgot_password_process.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/forgot_password_process.php on line 16
+[25-Oct-2024 21:49:47 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'evef9533_Eventreg.password_resets' doesn't exist in /home/evef9533/public_html/LEC-Copy/forgot_password_process.php:27
+Stack trace:
+#0 /home/evef9533/public_html/LEC-Copy/forgot_password_process.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/forgot_password_process.php on line 27
+[25-Oct-2024 21:56:25 Asia/Jakarta] PHP Warning:  include(connect.php): Failed to open stream: No such file or directory in /home/evef9533/public_html/LEC-Copy/update_password.php on line 4
+[25-Oct-2024 21:56:25 Asia/Jakarta] PHP Warning:  include(): Failed opening 'connect.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/evef9533/public_html/LEC-Copy/update_password.php on line 4
+[25-Oct-2024 21:56:26 Asia/Jakarta] PHP Warning:  Undefined variable $connect in /home/evef9533/public_html/LEC-Copy/update_password.php on line 11
+[25-Oct-2024 21:56:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/update_password.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/update_password.php on line 11
+[25-Oct-2024 21:56:32 Asia/Jakarta] PHP Warning:  include(connect.php): Failed to open stream: No such file or directory in /home/evef9533/public_html/LEC-Copy/update_password.php on line 4
+[25-Oct-2024 21:56:32 Asia/Jakarta] PHP Warning:  include(): Failed opening 'connect.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/evef9533/public_html/LEC-Copy/update_password.php on line 4
+[25-Oct-2024 21:56:32 Asia/Jakarta] PHP Warning:  Undefined variable $connect in /home/evef9533/public_html/LEC-Copy/update_password.php on line 11
+[25-Oct-2024 21:56:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/update_password.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/update_password.php on line 11
+[25-Oct-2024 21:58:46 Asia/Jakarta] PHP Warning:  include(connect.php): Failed to open stream: No such file or directory in /home/evef9533/public_html/LEC-Copy/update_password.php on line 5
+[25-Oct-2024 21:58:46 Asia/Jakarta] PHP Warning:  include(): Failed opening 'connect.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/evef9533/public_html/LEC-Copy/update_password.php on line 5
+[25-Oct-2024 21:58:46 Asia/Jakarta] PHP Warning:  Undefined variable $connect in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12
+[25-Oct-2024 21:58:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/update_password.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12
+[25-Oct-2024 21:59:17 Asia/Jakarta] PHP Warning:  include(connect.php): Failed to open stream: No such file or directory in /home/evef9533/public_html/LEC-Copy/update_password.php on line 5
+[25-Oct-2024 21:59:17 Asia/Jakarta] PHP Warning:  include(): Failed opening 'connect.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home/evef9533/public_html/LEC-Copy/update_password.php on line 5
+[25-Oct-2024 21:59:17 Asia/Jakarta] PHP Warning:  Undefined variable $connect in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12
+[25-Oct-2024 21:59:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/update_password.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12
+[25-Oct-2024 21:59:21 Asia/Jakarta] PHP Warning:  Undefined variable $connect in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12
+[25-Oct-2024 21:59:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/evef9533/public_html/LEC-Copy/update_password.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/evef9533/public_html/LEC-Copy/update_password.php on line 12

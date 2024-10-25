@@ -153,7 +153,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    Welcome, <span id="userName">User</span>
+                    Welcome, <span id="userName">Admin</span>
                     <button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button>
                 </span>
             </div>
@@ -163,26 +163,6 @@
     <div class="container pe-5">
         <div class="search-container mb-4">
             <div class="d-flex justify-content-end">
-                <!-- <div class="col-md-5 mb-3">
-                    <input type="text" class="form-control" id="searchInput" placeholder="Search events...">
-                </div> -->
-                <!-- <div class="col-md-3 mb-3">
-                    <select class="form-select" id="categoryFilter">
-                        <option value="">All Categories</option>
-                        <option value="music">Music</option>
-                        <option value="tech">Technology</option>
-                        <option value="sport">Sports</option>
-                        <option value="art">Arts & Culture</option>
-                    </select>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <select class="form-select" id="dateFilter">
-                        <option value="">All Dates</option>
-                        <option value="today">Today</option>
-                        <option value="week">This Week</option>
-                        <option value="month">This Month</option>
-                    </select>
-                </div> -->
                 <div class="pb-3 align-items-center">
                     <button class="btn btn-primary btn-md" onclick="addEvents()">Add Events</button>
                 </div>

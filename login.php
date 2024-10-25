@@ -3,7 +3,7 @@ session_start();
 require_once "connection.php";
 
 $email = "";  
-$error = '';  // A variable to store the error message
+$error = ''; 
 
 if (isset($_POST["login"])) {
     $email = $_POST["email"];  
@@ -27,10 +27,10 @@ if (isset($_POST["login"])) {
                 exit();
             }
         } else {
-            $error = "Password does not match."; // Incorrect password
+            $error = "Password does not match."; 
         }
     } else {
-        $error = "Email does not match."; // Email not found
+        $error = "Email does not match."; 
     }
 }
 ?>
@@ -48,6 +48,7 @@ if (isset($_POST["login"])) {
 </head>
 <body>
     <div class="login-container">
+        <h1>LOGIN</h1>
        <form action="login.php" method="post" novalidate>
             <div class="form-floating mb-3">
                 <input type="email" class="form-control bg-transparent text-light <?php echo !empty($emailError) ? 'is-invalid' : ''; ?>" id="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>">
@@ -73,10 +74,9 @@ if (isset($_POST["login"])) {
                 <input type="submit" value="Login" name="login" class="btn btn-outline-info btn-lg">
             </div>
         </form>
-        
         <div><p><a href="forgot_password_token.php">Forgot Password?</a></p></div>
         <div><p>Not registered yet? <a href="registration.php">Register Here</a></p></div>
-    </div>
+        </div>
 
     <?php if (!empty($error)): ?>
     <script>

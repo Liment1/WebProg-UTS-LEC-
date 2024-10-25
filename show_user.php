@@ -53,10 +53,10 @@ try {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="event-manage.php">Event Management</a>
+                        <a class="nav-link " href="event-manage.php">Event Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="User-manage.php">User Management</a>
+                        <a class="nav-link active" href="User-manage.php">User Management</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
