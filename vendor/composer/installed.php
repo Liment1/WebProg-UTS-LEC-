@@ -3,7 +3,7 @@
         'name' => 'user/lec',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7ab3b4b010a67d53147bc79dadb6975b1bf3f45b',
+        'reference' => '5a2c02e391a8b74b7592dc98cfc610d80d5966ad',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -35,6 +35,17 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../markbaker/matrix',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '611235697c399a2f15137e994892c4126cab6948',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'phpoffice/phpspreadsheet' => array(
@@ -93,7 +104,7 @@
         'user/lec' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7ab3b4b010a67d53147bc79dadb6975b1bf3f45b',
+            'reference' => '5a2c02e391a8b74b7592dc98cfc610d80d5966ad',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

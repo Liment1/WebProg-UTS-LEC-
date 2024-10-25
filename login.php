@@ -73,7 +73,8 @@ if (isset($_POST["login"])) {
                 <input type="submit" value="Login" name="login" class="btn btn-outline-info btn-lg">
             </div>
         </form>
-
+        
+        <div><p><a href="forgot_password_token.php">Forgot Password?</a></p></div>
         <div><p>Not registered yet? <a href="registration.php">Register Here</a></p></div>
     </div>
 
